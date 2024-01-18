@@ -38,6 +38,7 @@ export const Loader = () => {
       { progress < 100 && renderSpinningCoords() }
       { progress == 100 &&  renderFinalCoords() }
       <div className="loader-btm" style={loaderStyles}></div>
+      <div className="percents">{ progress }%</div>
     </div>
   )
 }

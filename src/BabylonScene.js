@@ -119,7 +119,7 @@ export default function BabylonScene() {
         scene.fogColor = new Color3(0.58, 0.85, 0.99)
         //(0.58, 0.85, 0.99) day (0.29, 0.32, 0.35) night
         scene.fogDensity = 0.0085
-        setProgress(5)
+        setProgress(2)
         //Ground
         const ground = new MeshBuilder.CreateGroundFromHeightMap(
             '',
@@ -131,7 +131,7 @@ export default function BabylonScene() {
                 maxHeight: 25,
             }
         )
-        setProgress(15)
+        setProgress(4)
         const groundmaterial = new StandardMaterial('ground', scene)
         groundmaterial.diffuseTexture = new Texture('/jpg/342342.jpg', scene)
         groundmaterial.diffuseTexture.uScale = 10
@@ -219,7 +219,7 @@ export default function BabylonScene() {
             }
         )
         music3.attachToMesh(sphereMusicN)
-        setProgress(25)
+        setProgress(6)
 
         //////////////////////////tree1//////////////////////
 
@@ -629,7 +629,7 @@ export default function BabylonScene() {
             sideOrientation: Mesh.DOUBLESIDE,
         })
         bgPlane_3_tr3.setEnabled(false)
-        setProgress(30)
+        setProgress(8)
 
         let stand_3_tr3 = new StandardMaterial('bgMaterial_3_tr3')
         let bgTexture_3_tr3 = new Texture('/jpg/tree_white.png')
@@ -670,13 +670,17 @@ export default function BabylonScene() {
         iconMeshInstance_3_tr3.parent = iconGroup_3_tr3
         iconGroup_3_tr3.parent = transFromNode_3_tr3
 
+
+
+        // Load 3D Trees
+
         SceneLoader.ImportMeshAsync(
             '',
             '/',
             './main_trees/M_Tree_1.obj',
             scene
         ).then(({ meshes }) => {
-            setProgress(45)
+            setProgress(10)
             const treeModel = meshes[0]
             treeModel.scaling = new Vector3(0.04, 0.04, 0.04)
             treeModel.position = new Vector3(0, 0, 0)
@@ -1163,7 +1167,7 @@ export default function BabylonScene() {
             './main_trees/M_Tree_2.obj',
             scene
         ).then(({ meshes }) => {
-            setProgress(60)
+            setProgress(15)
 
             const treeModel2 = meshes[0]
             treeModel2.scaling = new Vector3(0.04, 0.04, 0.04)
@@ -1651,7 +1655,7 @@ export default function BabylonScene() {
             './main_trees/M_Tree_3.obj',
             scene
         ).then(({ meshes }) => {
-            setProgress(80)
+            setProgress(20)
 
             const treeModel3 = meshes[0]
             treeModel3.scaling = new Vector3(0.04, 0.04, 0.04)
@@ -2136,9 +2140,17 @@ export default function BabylonScene() {
 
         function onProgressLoading(event) {
             if (event.lengthComputable) {
-                const progress = event.loaded / event.total
-                // console.log(progress)
-                if (progress > 0.9) {
+                let progress = event.loaded / event.total;
+                progress = Math.round(progress * 100) / 100;
+                
+                // console.log(progress);
+                // we need to scale the current loading from 20% to 100%
+                let progressScaled = 20 + (progress / 1.25) * 100;
+                progressScaled = Math.round(progressScaled);
+                // console.log(progressScaled);
+                setProgress(progressScaled);
+                
+                if (progress >= 0.98) {
                     setProgress(100)
                 }
             }
