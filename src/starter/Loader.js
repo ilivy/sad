@@ -12,20 +12,14 @@ export const Loader = () => {
   function renderSpinningCoords() {
     return (
       <div className="loader">
-        <span className="num1" />
-        <span className="num2" />°
-        <span className="num3" />
-        <span className="num2" />&apos;
-        <span className="num1" />
-        <span className="num2" />.
-        <span className="num3" />&quot;N&nbsp;
-        <span className="num2" />
-        <span className="num1" />°
-        <span className="num2" />
-        <span className="num1" />&apos;
-        <span className="num2" />
-        <span className="num3" />.
-        <span className="num2" />&quot;E
+        <span className="num54" />°
+        <span className="num38" />&apos;
+        <span className="num30" />.
+        <span className="num1" />&quot;N&nbsp;
+        <span className="num29" />°
+        <span className="num18" />&apos;
+        <span className="num29" />.
+        <span className="num1" />&quot;E
       </div>
     )
   }

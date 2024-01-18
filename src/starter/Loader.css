@@ -36,7 +36,10 @@
 span.num1 {
   display: inline-block;
   width: 0.7rem;
-  animation: counter1 1s infinite alternate linear;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-name: counter1;
+  animation-iteration-count: infinite;
   counter-reset: num var(--num);
 }
 span.num1::after {
@@ -51,76 +54,110 @@ span.num1::after {
   }
 }
 
-span.num2 {
+span.num18 {
   display: inline-block;
-  width: 0.7rem;
-  animation: counter2 4s infinite alternate linear;
+  width: 1.4rem;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-name: counter18;
+  animation-iteration-count: infinite;
   counter-reset: num var(--num);
 }
-span.num2::after {
+span.num18::after {
   content: counter(num);
 }
-@keyframes counter2 {
+@keyframes counter18 {
   from {
-    --num: 1;
+    --num: 0;
   }
   to {
-    --num: 9;
+    --num: 18;
   }
 }
 
-span.num3 {
+span.num29 {
   display: inline-block;
-  width: 0.7rem;
-  animation: counter3 2s infinite alternate linear;
+  width: 1.4rem;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-name: counter29;
+  animation-iteration-count: infinite;
   counter-reset: num var(--num);
 }
-span.num3::after {
+span.num29::after {
   content: counter(num);
 }
-@keyframes counter3 {
+@keyframes counter29 {
   from {
-    --num: 2;
+    --num: 0;
   }
   to {
-    --num: 9;
+    --num: 29;
   }
 }
 
-/* .loader-container {
-  width: 60vw;
-  display: flex;
-  margin-left: 0;
-  justify-content: center;
+span.num30 {
+  display: inline-block;
+  width: 1.4rem;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-name: counter30;
+  animation-iteration-count: infinite;
+  counter-reset: num var(--num);
+}
+span.num30::after {
+  content: counter(num);
+}
+@keyframes counter30 {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 30;
+  }
 }
 
-.loader{
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: block;
-    position: relative;
-    height: 65px;
-    width: 800px;
-    background: #fff;
-    overflow: hidden;
+span.num38 {
+  display: inline-block;
+  width: 1.4rem;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-name: counter38;
+  animation-iteration-count: infinite;
+  counter-reset: num var(--num);
+}
+span.num38::after {
+  content: counter(num);
+}
+@keyframes counter38 {
+  from {
+    --num: 0;
   }
-  .loader:after{
-    content: 'TEXT';
-    color: black;
-    font-size: 42px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    border-top: 4px solid #000000;
-    border-bottom: 4px solid #000000;
-    animation: prog 1s linear forwards;
+  to {
+    --num: 38;
   }
+}
 
+span.num54 {
+  display: inline-block;
+  width: 1.4rem;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-name: counter54;
+  animation-iteration-count: infinite;
+  /* animation: 1s counter54 4s infinite ease-in; */
+  counter-reset: num var(--num);
+}
+span.num54::after {
+  content: counter(num);
+}
+@keyframes counter54 {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 54;
+  }
+}
 
-
-  @keyframes prog {
-    to  { width: 100%;}
-  } */
   

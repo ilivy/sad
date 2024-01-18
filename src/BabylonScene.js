@@ -133,7 +133,7 @@ export default function BabylonScene() {
         )
         setProgress(15)
         const groundmaterial = new StandardMaterial('ground', scene)
-        groundmaterial.diffuseTexture = new Texture('/342342.jpg', scene)
+        groundmaterial.diffuseTexture = new Texture('/jpg/342342.jpg', scene)
         groundmaterial.diffuseTexture.uScale = 10
         groundmaterial.diffuseTexture.vScale = 10
 
@@ -233,12 +233,12 @@ export default function BabylonScene() {
         bgPlane_tr1.setEnabled(false)
 
         let stand_tr1 = new StandardMaterial('bgMaterial_tr1')
-        let bgTexture_tr1 = new Texture('/person2white.png')
+        let bgTexture_tr1 = new Texture('/jpg/person2white.png')
         stand_tr1.disableLighting = true
         stand_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr1.opacityTexture = bgTexture_tr1
         bgPlane_tr1.material = stand_tr1
-        let iconBgUrl_tr1 = '/person2white.png'
+        let iconBgUrl_tr1 = '/jpg/person2white.png'
         let sizeV_tr1 = 0.5
         var iconMesh_tr1 = MeshBuilder.CreatePlane('iconMesh_tr1', {
             width: sizeV_tr1 * 1.4,
@@ -282,13 +282,13 @@ export default function BabylonScene() {
         bgPlane_2_tr1.setEnabled(false)
 
         let stand_2_tr1 = new StandardMaterial('bgMaterial_2_tr1')
-        let bgTexture_2_tr1 = new Texture('/nota1white.png')
+        let bgTexture_2_tr1 = new Texture('/jpg/nota1white.png')
         stand_2_tr1.disableLighting = true
         stand_2_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr1.opacityTexture = bgTexture_2_tr1
         bgPlane_2_tr1.material = stand_2_tr1
 
-        let iconBgUrl_2_tr1 = '/nota1white.png'
+        let iconBgUrl_2_tr1 = '/jpg/nota1white.png'
         let sizeV_2_tr1 = 0.5
         var iconMesh_2_tr1 = MeshBuilder.CreatePlane('iconMesh_2_tr1', {
             width: sizeV_2_tr1 * 1.4,
@@ -332,13 +332,13 @@ export default function BabylonScene() {
         bgPlane_3_tr1.setEnabled(false)
 
         let stand_3_tr1 = new StandardMaterial('bgMaterial_3_tr1')
-        let bgTexture_3_tr1 = new Texture('/tree_white.png')
+        let bgTexture_3_tr1 = new Texture('/jpg/tree_white.png')
         stand_3_tr1.disableLighting = true
         stand_3_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr1.opacityTexture = bgTexture_3_tr1
         bgPlane_3_tr1.material = stand_3_tr1
 
-        let iconBgUrl_3_tr1 = '/tree_white.png'
+        let iconBgUrl_3_tr1 = '/jpg/tree_white.png'
         let sizeV_3 = 0.5
         var iconMesh_3_tr1 = MeshBuilder.CreatePlane('iconMesh_3_tr1', {
             width: sizeV_3 * 1.4,
@@ -382,13 +382,13 @@ export default function BabylonScene() {
         bgPlane_tr2.setEnabled(false)
 
         let stand_tr2 = new StandardMaterial('bgMaterial_tr2')
-        let bgTexture_tr2 = new Texture('/person2white.png')
+        let bgTexture_tr2 = new Texture('/jpg/person2white.png')
         stand_tr2.disableLighting = true
         stand_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr2.opacityTexture = bgTexture_tr2
         bgPlane_tr2.material = stand_tr2
 
-        let iconBgUrl_tr2 = '/person2white.png'
+        let iconBgUrl_tr2 = '/jpg/person2white.png'
         let sizeV_tr2 = 0.5
         var iconMesh_tr2 = MeshBuilder.CreatePlane('iconMesh_tr2', {
             width: sizeV_tr2 * 1.4,
@@ -432,13 +432,13 @@ export default function BabylonScene() {
         bgPlane_2_tr2.setEnabled(false)
 
         let stand_2_tr2 = new StandardMaterial('bgMaterial_2_tr2')
-        let bgTexture_2_tr2 = new Texture('/nota1white.png')
+        let bgTexture_2_tr2 = new Texture('/jpg/nota1white.png')
         stand_2_tr2.disableLighting = true
         stand_2_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr2.opacityTexture = bgTexture_2_tr2
         bgPlane_2_tr2.material = stand_2_tr2
 
-        let iconBgUrl_2_tr2 = '/nota1white.png'
+        let iconBgUrl_2_tr2 = '/jpg/nota1white.png'
         let sizeV_2_tr2 = 0.5
         var iconMesh_2_tr2 = MeshBuilder.CreatePlane('iconMesh_2_tr2', {
             width: sizeV_2_tr2 * 1.4,
@@ -482,13 +482,13 @@ export default function BabylonScene() {
         bgPlane_3_tr2.setEnabled(false)
 
         let stand_3_tr2 = new StandardMaterial('bgMaterial_3_tr2')
-        let bgTexture_3_tr2 = new Texture('/tree_white.png')
+        let bgTexture_3_tr2 = new Texture('/jpg/tree_white.png')
         stand_3_tr2.disableLighting = true
         stand_3_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr2.opacityTexture = bgTexture_3_tr2
         bgPlane_3_tr2.material = stand_3_tr2
 
-        let iconBgUrl_3_tr2 = '/tree_white.png'
+        let iconBgUrl_3_tr2 = '/jpg/tree_white.png'
         let sizeV_3_tr2 = 0.5
         var iconMesh_3_tr2 = MeshBuilder.CreatePlane('iconMesh_3_tr2', {
             width: sizeV_3_tr2 * 1.4,
@@ -532,13 +532,13 @@ export default function BabylonScene() {
         bgPlane_tr3.setEnabled(false)
 
         let stand_tr3 = new StandardMaterial('bgMaterial_tr3')
-        let bgTexture_tr3 = new Texture('/person2white.png')
+        let bgTexture_tr3 = new Texture('/jpg/person2white.png')
         stand_tr3.disableLighting = true
         stand_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr3.opacityTexture = bgTexture_tr3
         bgPlane_tr3.material = stand_tr3
 
-        let iconBgUrl_tr3 = '/person2white.png'
+        let iconBgUrl_tr3 = '/jpg/person2white.png'
         let sizeV_tr3 = 0.5
         var iconMesh_tr3 = MeshBuilder.CreatePlane('iconMesh_tr3', {
             width: sizeV_tr3 * 1.4,
@@ -582,13 +582,13 @@ export default function BabylonScene() {
         bgPlane_2_tr3.setEnabled(false)
 
         let stand_2_tr3 = new StandardMaterial('bgMaterial_2_tr3')
-        let bgTexture_2_tr3 = new Texture('/nota1white.png')
+        let bgTexture_2_tr3 = new Texture('/jpg/nota1white.png')
         stand_2_tr3.disableLighting = true
         stand_2_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr3.opacityTexture = bgTexture_2_tr3
         bgPlane_2_tr3.material = stand_2_tr3
 
-        let iconBgUrl_2_tr3 = '/nota1white.png'
+        let iconBgUrl_2_tr3 = '/jpg/nota1white.png'
         let sizeV_2_tr3 = 0.5
         var iconMesh_2_tr3 = MeshBuilder.CreatePlane('iconMesh_2_tr3', {
             width: sizeV_2_tr3 * 1.4,
@@ -632,13 +632,13 @@ export default function BabylonScene() {
         setProgress(30)
 
         let stand_3_tr3 = new StandardMaterial('bgMaterial_3_tr3')
-        let bgTexture_3_tr3 = new Texture('/tree_white.png')
+        let bgTexture_3_tr3 = new Texture('/jpg/tree_white.png')
         stand_3_tr3.disableLighting = true
         stand_3_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr3.opacityTexture = bgTexture_3_tr3
         bgPlane_3_tr3.material = stand_3_tr3
 
-        let iconBgUrl_3_tr3 = '/tree_white.png'
+        let iconBgUrl_3_tr3 = '/jpg/tree_white.png'
         let sizeV_3_tr3 = 0.5
         var iconMesh_3_tr3 = MeshBuilder.CreatePlane('iconMesh_3_tr3', {
             width: sizeV_3_tr3 * 1.4,
@@ -2173,6 +2173,7 @@ export default function BabylonScene() {
     }
     // #endregion
 
+    // Click "B SAD" button
     const handleClose = () => {
         setIsClose(true)
     }

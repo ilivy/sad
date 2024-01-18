@@ -11,7 +11,7 @@ function ThirdPage({ onClose }) {
             <div className="content">
                 <div className="staticLogo-container">
                     <img
-                        src="/StaticLogo_screen.png"
+                        src="/jpg/StaticLogo_screen.png"
                         alt="SAD"
                         className="statLogo"
                     />
@@ -36,7 +36,7 @@ function ThirdPage({ onClose }) {
                 </div>
                 <div className="hp-logo-container">
                     <img
-                        src="/headphone_icon.png"
+                        src="/jpg/headphone_icon.png"
                         alt="headphones"
                         className="hp-logo"
                     />
@@ -48,7 +48,7 @@ function ThirdPage({ onClose }) {
                 <div className="sprava-logo-text">проект фестиваля</div>
                 <div className="sprava-logo-container">
                     <img
-                        src="/Sprava_logo.png"
+                        src="/jpg/Sprava_logo.png"
                         alt="Sprava"
                         className="sprava-logo-static"
                     />
