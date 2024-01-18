@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import './ThirdPage.css'
 
 // eslint-disable-next-line react/prop-types
@@ -5,6 +6,12 @@ function ThirdPage({ onClose }) {
     const handleClick = () => {
         onClose()
     }
+    
+    useEffect(() => {
+        if (document.getElementById("babylonUnmuteIconBtn")) {
+            document.getElementById("babylonUnmuteIconBtn").style.top = "20px";
+        }
+    }, [])
 
     return (
         <div className="container-third-page">
