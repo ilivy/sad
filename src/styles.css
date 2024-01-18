@@ -1,0 +1,60 @@
+canvas {
+  width: 100%;
+  height: 100vh;
+}
+
+@font-face {
+  /* 400  — Akrobat-Regular */
+  font-family: 'Akrobat';
+  src: url('/public/font/Akrobat.woff') format(woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  /* 600  — Akrobat-SemiBold */
+  font-family: 'Akrobat';
+  src: url('/public/font/Akrobatsemibold.woff') format(woff);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* 700  — Akrobat-Bold */
+  font-family: 'Akrobat';
+  src: url('/public/font/Akrobatbold.woff') format(woff);
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, #root {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Akrobat', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.05);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #999, #888);
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.8);
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(left, #888, #777);
+}

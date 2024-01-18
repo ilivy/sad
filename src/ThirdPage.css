@@ -1,0 +1,146 @@
+.container-third-page {
+    font-weight: 600;
+    position: absolute;
+    background: white;
+    top: 0;
+    left: 20%;
+    overflow-y: auto;
+    height: 100vh;
+    width: 60%;
+    opacity: 0;
+    animation: lineAnimation 2s ease-in forwards;
+}
+
+.staticLogo-container {
+    opacity: 0;
+    text-align: center;
+    margin-top: 0;
+    animation: 2s lineAnimation 2s ease-in forwards;
+}
+
+.statLogo {
+    max-width: 450px;
+    max-height: 450px;
+}
+
+.welcomeText-container {
+    margin: 2rem;
+    text-align: center;
+}
+
+.welcomeText-container p {
+    margin: 0;
+    opacity: 0;
+}
+
+.par1 {
+    animation: 4s lineAnimation 1s ease-in forwards;
+}
+.par2 {
+    animation: 5s lineAnimation 1s ease-in forwards;
+}
+.par3 {
+    animation: 6s lineAnimation 1s ease-in forwards;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.hp-logo-container {
+    opacity: 0;
+    text-align: center;
+    margin-top: 3rem;
+    animation: 7s lineAnimation 1s ease-in forwards;
+}
+
+.hp-logo {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.hptext-container {
+    opacity: 0;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    animation: 7s lineAnimation 1s ease-in forwards;
+}
+
+.sprava-logo-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: 9s lineAnimation 1s ease-in forwards;
+}
+
+.sprava-logo-static {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.sprava-logo-text {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0;
+    animation: 9s lineAnimation 1s ease-in forwards;
+}
+
+.button {
+    position: relative;
+    margin: auto;
+    display: block;
+    background-image: url('/public/Button_BSAD.png');
+    background-size: cover;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    transition: 
+        top 0.2s,
+        left 0.2s;
+    opacity: 0;
+    animation: 8s lineAnimation 1s ease-in forwards;
+}
+
+.button:hover {
+    cursor: pointer;
+    top: 1px;
+    left: 1px;
+}
+
+@keyframes lineAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* .container-third-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.content {
+
+} */
+
+/* .container-third-page {
+    position: absolute;
+    margin: auto;
+
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    height: 100vh;
+
+} */

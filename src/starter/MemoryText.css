@@ -1,0 +1,28 @@
+ .text-container {
+    text-align: center;
+    font-weight: 600;
+}
+
+.text-container p {
+   margin: 0;
+   padding: 0;
+   opacity: 0;
+}
+
+.text-bold {
+   font-weight: bold;
+ }
+
+ .text-container p.line1 {
+   animation: lineAnimation 2s ease-in forwards;
+ }
+
+ .text-container p.line2 {
+   animation: 2s lineAnimation 2s ease-in forwards;
+ }
+
+ @keyframes lineAnimation {
+   0% { opacity: 0; }
+   50% { opacity: 0.5; }
+   100% { opacity: 1; }
+ }

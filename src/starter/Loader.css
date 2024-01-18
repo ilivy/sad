@@ -1,0 +1,126 @@
+.loader-container {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  animation: 2s loaderCntAnimation 2s ease-in forwards;
+}
+
+@keyframes loaderCntAnimation {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loader-top {
+  width: 0%;
+  margin-left: 0;
+  background-color: black;
+  height: 0.1rem;
+}
+
+.loader-btm {
+  width: 0%;
+  margin-right: 0;
+  margin-left: auto;
+  background-color: black;
+  height: 0.1rem;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+span.num1 {
+  display: inline-block;
+  width: 0.7rem;
+  animation: counter1 1s infinite alternate linear;
+  counter-reset: num var(--num);
+}
+span.num1::after {
+  content: counter(num);
+}
+@keyframes counter1 {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 9;
+  }
+}
+
+span.num2 {
+  display: inline-block;
+  width: 0.7rem;
+  animation: counter2 4s infinite alternate linear;
+  counter-reset: num var(--num);
+}
+span.num2::after {
+  content: counter(num);
+}
+@keyframes counter2 {
+  from {
+    --num: 1;
+  }
+  to {
+    --num: 9;
+  }
+}
+
+span.num3 {
+  display: inline-block;
+  width: 0.7rem;
+  animation: counter3 2s infinite alternate linear;
+  counter-reset: num var(--num);
+}
+span.num3::after {
+  content: counter(num);
+}
+@keyframes counter3 {
+  from {
+    --num: 2;
+  }
+  to {
+    --num: 9;
+  }
+}
+
+/* .loader-container {
+  width: 60vw;
+  display: flex;
+  margin-left: 0;
+  justify-content: center;
+}
+
+.loader{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    position: relative;
+    height: 65px;
+    width: 800px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .loader:after{
+    content: 'TEXT';
+    color: black;
+    font-size: 42px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    border-top: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    animation: prog 1s linear forwards;
+  }
+
+
+
+  @keyframes prog {
+    to  { width: 100%;}
+  } */
+  
