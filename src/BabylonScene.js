@@ -2138,7 +2138,7 @@ export default function BabylonScene() {
             if (event.lengthComputable) {
                 const progress = event.loaded / event.total
                 // console.log(progress)
-                if (progress > 0.7) {
+                if (progress > 0.9) {
                     setProgress(100)
                 }
             }
@@ -2171,11 +2171,11 @@ export default function BabylonScene() {
         // setIsLoaded(true)
         // engine.hideLoadingUI()
     }
-    // #endregion
+    // #end onSceneReady
 
     // Click "B SAD" button
     const handleClose = () => {
-        setIsClose(true)
+        setIsClose(true);
     }
 
     return (

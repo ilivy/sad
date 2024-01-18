@@ -14,7 +14,7 @@ const StarterPage = () => {
     const { isLoaded, isOpen, handleComponentOpen } = useButtonContext()
 
     useEffect(() => {
-        const delay = 3000 // 2 seconds
+        const delay = 4000 // milliseconds
 
         const memoryTextTimeout = setTimeout(() => {
             setShowMemoryText(true)
