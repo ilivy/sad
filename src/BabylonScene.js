@@ -123,7 +123,7 @@ export default function BabylonScene() {
         //Ground
         const ground = new MeshBuilder.CreateGroundFromHeightMap(
             '',
-            '/Terrain_map.png',
+            '/jpg/Terrain_map.png',
             {
                 height: 2000,
                 width: 2000,
