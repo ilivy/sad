@@ -41,6 +41,11 @@ body {
   font-size: 1.6rem;
   margin: 0;
 }
+
+.text-bold {
+  font-weight: bold;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -57,4 +62,13 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover{
   background: linear-gradient(left, #888, #777);
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }

@@ -18,7 +18,7 @@ function ThirdPage({ onClose }) {
             <div className="content">
                 <div className="staticLogo-container">
                     <img
-                        src="/jpg/StaticLogo_screen.png"
+                        src="/jpg/logo/static_small.png"
                         alt="SAD"
                         className="statLogo"
                     />
@@ -43,7 +43,7 @@ function ThirdPage({ onClose }) {
                 </div>
                 <div className="hp-logo-container">
                     <img
-                        src="/jpg/headphone_icon.png"
+                        src="/jpg/icon/headphones.png"
                         alt="headphones"
                         className="hp-logo"
                     />

@@ -1,0 +1,31 @@
+.icon-popup-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  padding-top: 2rem;
+  background: white;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+  font-size: 1.4rem;
+}
+
+.icon-popup-container .close-icon {
+  position: absolute;
+  width: 2rem;
+  /* padding: 0 1rem 1rem 0; */
+  top: 2rem;
+  right: 2rem
+}
+
+.icon-popup-container .close-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+

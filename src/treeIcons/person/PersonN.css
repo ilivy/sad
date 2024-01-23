@@ -1,0 +1,46 @@
+.person-container-n {
+  background-image: url('/public/jpg/photo/portret_Naroshevich.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.person-container-n-inner {
+  padding: 4rem;
+  font-weight: bold;
+}
+
+.person-container-n-img {
+  padding: 2rem 0 0 1rem;
+}
+
+.person-container-n-img img {
+  width: 2rem;
+}
+
+.person-container-n h4 {
+  font-size: 2rem;
+  margin: 1rem 0 0.2rem 0;
+}
+
+.person-container-n-ul {
+  list-style: none;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.person-container-n-music-link {
+  padding-bottom: 6rem;
+}
+
+.music-lib-link-n {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: normal;
+}

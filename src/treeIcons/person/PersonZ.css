@@ -1,0 +1,47 @@
+.person-container {
+  background-image: url('/public/jpg/photo/portret_Zalesskii.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.person-container-inner {
+  padding: 4rem;
+  font-weight: bold;
+}
+
+.person-container-img {
+  padding: 1rem 0 0 3rem;
+  cursor: pointer;
+}
+
+.person-container-img img {
+  width: 2rem;
+}
+
+.person-container h4 {
+  font-size: 2rem;
+  margin: 1rem 0 0.2rem 0;
+}
+
+.person-container-ul {
+  list-style: none;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.person-container-music-link {
+  padding: 0 0 6rem 1rem;
+}
+
+.music-lib-link {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: normal;
+}

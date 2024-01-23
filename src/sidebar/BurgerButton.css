@@ -1,0 +1,16 @@
+.burger-icon-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2rem;
+  background: none;
+}
+
+.burger-icon {
+  width: 3rem;
+}
+
+.burger-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

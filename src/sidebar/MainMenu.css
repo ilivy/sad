@@ -1,0 +1,51 @@
+.main-menu-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  padding: 2rem;
+  background: white;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+  font-size: 1.4rem;
+}
+
+.top-box,
+.bottom-box {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.top-box .text,
+.bottom-box .text {
+  text-align: right;
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+.main-menu-container h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.main-menu-container h4:hover {
+  opacity: 0.8;
+}
+
+.close-icon {
+  width: 2rem;
+  padding-bottom: 1rem;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

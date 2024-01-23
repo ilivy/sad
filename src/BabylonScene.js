@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import '@babylonjs/loaders/OBJ'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
+import '@babylonjs/loaders/OBJ';
+import PropTypes from 'prop-types';
 import {
     FreeCamera,
     Vector3,
@@ -36,13 +36,29 @@ import {
     NodeMaterial,
     NodeMaterialModes,
     TransformNode,
-} from '@babylonjs/core'
-import SceneComponent from 'babylonjs-hook'
-import { useButtonContext } from './App'
-import ThirdPage from './ThirdPage'
+} from '@babylonjs/core';
+import SceneComponent from 'babylonjs-hook';
+import { useButtonContext } from './App';
+import ThirdPage from './ThirdPage';
+import MainMenu from './sidebar/MainMenu';
+import BurgerButton from './sidebar/BurgerButton';
+import IconPopup from './treeIcons/IconPopup';
+// import SoundTreeZ from './SoundTreeZ';
 
 export default function BabylonScene() {
-    const { setIsLoaded, isOpen, setProgress } = useButtonContext();
+    const { 
+        setIsLoaded,
+        isOpen,
+        setProgress,
+
+        isBurgerPopupOpen,
+        setIsBurgerPopupOpen,
+
+        isIconPopupOpen,
+        setIsIconPopupOpen,
+        setIconPopupId
+    } = useButtonContext();
+
     const [isClose, setIsClose] = useState(false)
 
     const onSceneReady = async (scene) => {
@@ -161,24 +177,27 @@ export default function BabylonScene() {
         //finally, say which mesh will be collisionable
         ground.checkCollisions = true
 
+
+        //  Attach Music to the main Trees
+
         const sphereMat = new StandardMaterial('sphereMat', scene)
         sphereMat.diffuseColor = Color3.Purple()
         sphereMat.backFaceCulling = false
         sphereMat.alpha = 0
 
-        const sphereMusicZ = Mesh.CreateSphere('musicsphere', 50, 50, scene)
+        const sphereMusicZ = Mesh.CreateSphere('musicsphereZ', 50, 50, scene)
         sphereMusicZ.material = sphereMat
         sphereMusicZ.position = new Vector3(248, 25, 360)
 
-        const sphereMusicS = Mesh.CreateSphere('musicsphere', 50, 50, scene)
-        sphereMusicS.material = sphereMat
-        sphereMusicS.position = new Vector3(307, 25, -347)
-
-        const sphereMusicN = Mesh.CreateSphere('musicsphere', 50, 50, scene)
+        const sphereMusicN = Mesh.CreateSphere('musicsphereN', 50, 50, scene)
         sphereMusicN.material = sphereMat
         sphereMusicN.position = new Vector3(-391, 25, -27)
 
-        const music1 = new Sound(
+        const sphereMusicS = Mesh.CreateSphere('musicsphereS', 50, 50, scene)
+        sphereMusicS.material = sphereMat
+        sphereMusicS.position = new Vector3(307, 25, -347)
+
+        const musicZ1 = new Sound(
             'Z',
             './sound/Z/Z11-ambient.mp3',
             scene,
@@ -190,23 +209,9 @@ export default function BabylonScene() {
                 useCustomAttenuation: true,
             }
         )
-        music1.attachToMesh(sphereMusicZ)
-
-        const music2 = new Sound(
-            'S',
-            './sound/S/S-ambient-death01.mp3',
-            scene,
-            null,
-            {
-                loop: true,
-                autoplay: true,
-                maxDistance: 700,
-                useCustomAttenuation: true,
-            }
-        )
-        music2.attachToMesh(sphereMusicS)
-
-        const music3 = new Sound(
+        musicZ1.attachToMesh(sphereMusicZ);
+        
+        const musicN1 = new Sound(
             'N',
             './sound/N/N_08_chaos_x(1-2).mp3',
             scene,
@@ -218,7 +223,22 @@ export default function BabylonScene() {
                 useCustomAttenuation: true,
             }
         )
-        music3.attachToMesh(sphereMusicN)
+        musicN1.attachToMesh(sphereMusicN);
+
+        const musicS1 = new Sound(
+            'S',
+            './sound/S/S-ambient-death01.mp3',
+            scene,
+            null,
+            {
+                loop: true,
+                autoplay: true,
+                maxDistance: 700,
+                useCustomAttenuation: true,
+            }
+        )
+        musicS1.attachToMesh(sphereMusicS);
+
         setProgress(6)
 
         //////////////////////////tree1//////////////////////
@@ -233,12 +253,12 @@ export default function BabylonScene() {
         bgPlane_tr1.setEnabled(false)
 
         let stand_tr1 = new StandardMaterial('bgMaterial_tr1')
-        let bgTexture_tr1 = new Texture('/jpg/person2white.png')
+        let bgTexture_tr1 = new Texture('/jpg/icon/tree_icon_person_Z.png')
         stand_tr1.disableLighting = true
         stand_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr1.opacityTexture = bgTexture_tr1
         bgPlane_tr1.material = stand_tr1
-        let iconBgUrl_tr1 = '/jpg/person2white.png'
+        let iconBgUrl_tr1 = '/jpg/icon/tree_icon_person_Z.png'
         let sizeV_tr1 = 0.5
         var iconMesh_tr1 = MeshBuilder.CreatePlane('iconMesh_tr1', {
             width: sizeV_tr1 * 1.4,
@@ -282,13 +302,13 @@ export default function BabylonScene() {
         bgPlane_2_tr1.setEnabled(false)
 
         let stand_2_tr1 = new StandardMaterial('bgMaterial_2_tr1')
-        let bgTexture_2_tr1 = new Texture('/jpg/nota1white.png')
+        let bgTexture_2_tr1 = new Texture('/jpg/icon/tree_icon_music.png')
         stand_2_tr1.disableLighting = true
         stand_2_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr1.opacityTexture = bgTexture_2_tr1
         bgPlane_2_tr1.material = stand_2_tr1
 
-        let iconBgUrl_2_tr1 = '/jpg/nota1white.png'
+        let iconBgUrl_2_tr1 = '/jpg/icon/tree_icon_music.png'
         let sizeV_2_tr1 = 0.5
         var iconMesh_2_tr1 = MeshBuilder.CreatePlane('iconMesh_2_tr1', {
             width: sizeV_2_tr1 * 1.4,
@@ -332,13 +352,13 @@ export default function BabylonScene() {
         bgPlane_3_tr1.setEnabled(false)
 
         let stand_3_tr1 = new StandardMaterial('bgMaterial_3_tr1')
-        let bgTexture_3_tr1 = new Texture('/jpg/tree_white.png')
+        let bgTexture_3_tr1 = new Texture('/jpg/icon/tree_icon_artobj.png')
         stand_3_tr1.disableLighting = true
         stand_3_tr1.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr1.opacityTexture = bgTexture_3_tr1
         bgPlane_3_tr1.material = stand_3_tr1
 
-        let iconBgUrl_3_tr1 = '/jpg/tree_white.png'
+        let iconBgUrl_3_tr1 = '/jpg/icon/tree_icon_artobj.png'
         let sizeV_3 = 0.5
         var iconMesh_3_tr1 = MeshBuilder.CreatePlane('iconMesh_3_tr1', {
             width: sizeV_3 * 1.4,
@@ -382,13 +402,13 @@ export default function BabylonScene() {
         bgPlane_tr2.setEnabled(false)
 
         let stand_tr2 = new StandardMaterial('bgMaterial_tr2')
-        let bgTexture_tr2 = new Texture('/jpg/person2white.png')
+        let bgTexture_tr2 = new Texture('/jpg/icon/tree_icon_person_N.png')
         stand_tr2.disableLighting = true
         stand_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr2.opacityTexture = bgTexture_tr2
         bgPlane_tr2.material = stand_tr2
 
-        let iconBgUrl_tr2 = '/jpg/person2white.png'
+        let iconBgUrl_tr2 = '/jpg/icon/tree_icon_person_N.png'
         let sizeV_tr2 = 0.5
         var iconMesh_tr2 = MeshBuilder.CreatePlane('iconMesh_tr2', {
             width: sizeV_tr2 * 1.4,
@@ -432,13 +452,13 @@ export default function BabylonScene() {
         bgPlane_2_tr2.setEnabled(false)
 
         let stand_2_tr2 = new StandardMaterial('bgMaterial_2_tr2')
-        let bgTexture_2_tr2 = new Texture('/jpg/nota1white.png')
+        let bgTexture_2_tr2 = new Texture('/jpg/icon/tree_icon_music.png')
         stand_2_tr2.disableLighting = true
         stand_2_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr2.opacityTexture = bgTexture_2_tr2
         bgPlane_2_tr2.material = stand_2_tr2
 
-        let iconBgUrl_2_tr2 = '/jpg/nota1white.png'
+        let iconBgUrl_2_tr2 = '/jpg/icon/tree_icon_music.png'
         let sizeV_2_tr2 = 0.5
         var iconMesh_2_tr2 = MeshBuilder.CreatePlane('iconMesh_2_tr2', {
             width: sizeV_2_tr2 * 1.4,
@@ -482,13 +502,13 @@ export default function BabylonScene() {
         bgPlane_3_tr2.setEnabled(false)
 
         let stand_3_tr2 = new StandardMaterial('bgMaterial_3_tr2')
-        let bgTexture_3_tr2 = new Texture('/jpg/tree_white.png')
+        let bgTexture_3_tr2 = new Texture('/jpg/icon/tree_icon_artobj.png')
         stand_3_tr2.disableLighting = true
         stand_3_tr2.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr2.opacityTexture = bgTexture_3_tr2
         bgPlane_3_tr2.material = stand_3_tr2
 
-        let iconBgUrl_3_tr2 = '/jpg/tree_white.png'
+        let iconBgUrl_3_tr2 = '/jpg/icon/tree_icon_artobj.png'
         let sizeV_3_tr2 = 0.5
         var iconMesh_3_tr2 = MeshBuilder.CreatePlane('iconMesh_3_tr2', {
             width: sizeV_3_tr2 * 1.4,
@@ -532,13 +552,13 @@ export default function BabylonScene() {
         bgPlane_tr3.setEnabled(false)
 
         let stand_tr3 = new StandardMaterial('bgMaterial_tr3')
-        let bgTexture_tr3 = new Texture('/jpg/person2white.png')
+        let bgTexture_tr3 = new Texture('/jpg/icon/tree_icon_person_S.png')
         stand_tr3.disableLighting = true
         stand_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_tr3.opacityTexture = bgTexture_tr3
         bgPlane_tr3.material = stand_tr3
 
-        let iconBgUrl_tr3 = '/jpg/person2white.png'
+        let iconBgUrl_tr3 = '/jpg/icon/tree_icon_person_S.png'
         let sizeV_tr3 = 0.5
         var iconMesh_tr3 = MeshBuilder.CreatePlane('iconMesh_tr3', {
             width: sizeV_tr3 * 1.4,
@@ -582,13 +602,13 @@ export default function BabylonScene() {
         bgPlane_2_tr3.setEnabled(false)
 
         let stand_2_tr3 = new StandardMaterial('bgMaterial_2_tr3')
-        let bgTexture_2_tr3 = new Texture('/jpg/nota1white.png')
+        let bgTexture_2_tr3 = new Texture('/jpg/icon/tree_icon_music.png')
         stand_2_tr3.disableLighting = true
         stand_2_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_2_tr3.opacityTexture = bgTexture_2_tr3
         bgPlane_2_tr3.material = stand_2_tr3
 
-        let iconBgUrl_2_tr3 = '/jpg/nota1white.png'
+        let iconBgUrl_2_tr3 = '/jpg/icon/tree_icon_music.png'
         let sizeV_2_tr3 = 0.5
         var iconMesh_2_tr3 = MeshBuilder.CreatePlane('iconMesh_2_tr3', {
             width: sizeV_2_tr3 * 1.4,
@@ -632,13 +652,13 @@ export default function BabylonScene() {
         setProgress(8)
 
         let stand_3_tr3 = new StandardMaterial('bgMaterial_3_tr3')
-        let bgTexture_3_tr3 = new Texture('/jpg/tree_white.png')
+        let bgTexture_3_tr3 = new Texture('/jpg/icon/tree_icon_artobj.png')
         stand_3_tr3.disableLighting = true
         stand_3_tr3.emissiveColor.copyFrom(Color3.FromHexString('#ffffff'))
         stand_3_tr3.opacityTexture = bgTexture_3_tr3
         bgPlane_3_tr3.material = stand_3_tr3
 
-        let iconBgUrl_3_tr3 = '/jpg/tree_white.png'
+        let iconBgUrl_3_tr3 = '/jpg/icon/tree_icon_artobj.png'
         let sizeV_3_tr3 = 0.5
         var iconMesh_3_tr3 = MeshBuilder.CreatePlane('iconMesh_3_tr3', {
             width: sizeV_3_tr3 * 1.4,
@@ -671,8 +691,85 @@ export default function BabylonScene() {
         iconGroup_3_tr3.parent = transFromNode_3_tr3
 
 
+        //  // Make Tree Icons pickable
+        // bgPlane_tr1.isPickable = true;
+        // bgPlane_2_tr1.isPickable = true;
+        // bgPlane_3_tr1.isPickable = true;
+        // bgPlane_tr2.isPickable = true;
+        // bgPlane_2_tr2.isPickable = true;
+        // bgPlane_3_tr2.isPickable = true;
+        // bgPlane_tr3.isPickable = true;
+        // bgPlane_2_tr3.isPickable = true;
+        // bgPlane_3_tr3.isPickable = true;
 
-        // Load 3D Trees
+        scene.onPointerObservable.add((pointerInfo) => {
+            if (pointerInfo.type == 1) {  // POINTERPICK = 16, POINTERDOWN = 1
+                // console.log(pointerInfo.pickInfo.pickedMesh.name);
+
+                switch (pointerInfo.pickInfo.pickedMesh.name) {
+                    case 'bgPlane_tr1-instance':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('personZ');
+                        // console.log('personZ');
+                        break;
+                    case 'bgPlane_2_tr1-instance_2':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('soundZ');
+                        // console.log('soundZ');
+                        break;
+                    case 'bgPlane_3_tr1-instance_3_tr1':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('artobjZ');
+                        // console.log('artobjZ');
+                        break;
+
+                    case 'bgPlane_tr2-instance':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('personN');
+                        // console.log('personN');
+                        break;
+                    case 'bgPlane_2_tr2-instance_2':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('soundN');
+                        // console.log('personN');
+                        break;
+                    case 'bgPlane_3_tr2-instance_3':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('artobjN');
+                        // console.log('artobjN');
+                        break;
+
+                    case 'bgPlane_tr3-instance':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('personS');
+                        // console.log('artobjN');
+                        break;
+                    case 'bgPlane_2_tr3-instance_2':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('soundS');
+                        // console.log('soundS');
+                        break;
+                    case 'bgPlane_3_tr3-instance_3':
+                        setIsBurgerPopupOpen(false);
+                        setIsIconPopupOpen(true);
+                        setIconPopupId('artobjS');
+                        // console.log('artobjS');
+                        break;
+                }
+            }
+    });
+
+
+
+        // Loading main 3D Trees
 
         SceneLoader.ImportMeshAsync(
             '',
@@ -2193,6 +2290,9 @@ export default function BabylonScene() {
     return (
         <>
             {!isClose && isOpen && <ThirdPage onClose={handleClose} />}
+            {isClose && isOpen && isBurgerPopupOpen && <MainMenu />}
+            {isClose && isOpen && !isBurgerPopupOpen && <BurgerButton />}
+            {isClose && isOpen && isIconPopupOpen && <IconPopup />}
             <SceneComponent
                 style={{
                     visibility: isOpen ? 'visible' : 'hidden',
@@ -2207,6 +2307,10 @@ export default function BabylonScene() {
                 onSceneReady={onSceneReady}
                 id="my-canvas"
             />
+
+            {/* <SoundPlayer soundFiles={soundFiles} /> */}
+            {/* {isOpen && <SoundPlayer />} */}
+            {/* {isOpen && <SoundTreeZ />} */}
         </>
     )
 }

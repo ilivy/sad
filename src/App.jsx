@@ -8,25 +8,45 @@ const ButtonContext = createContext()
 
 // eslint-disable-next-line react/prop-types
 export const ButtonProvider = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [isLoaded, setIsLoaded] = useState(false)
-    const [progress, setProgress] = useState(0)
+    // Scene Component is shown
+    const [isOpen, setIsOpen] = useState(false);
+    // 3D objects are loaded
+    const [isLoaded, setIsLoaded] = useState(false);
+    // Progress of loading 3D objects
+    const [progress, setProgress] = useState(0);
+
+    // Click on Burger Menu
+    const [isBurgerPopupOpen, setIsBurgerPopupOpen] = useState(false);
+
+    // Click on Icons on the Main Trees
+    const [isIconPopupOpen, setIsIconPopupOpen] = useState(false);
+    const [iconPopupId, setIconPopupId] = useState('');
 
 
     const handleComponentOpen = (value) => {
         setIsOpen(value)
     }
 
+    const contextValue = {
+        isLoaded,
+        isOpen,
+        setIsLoaded,
+        handleComponentOpen,
+        progress,
+        setProgress,
+
+        isBurgerPopupOpen,
+        setIsBurgerPopupOpen,
+
+        isIconPopupOpen,
+        setIsIconPopupOpen,
+        iconPopupId,
+        setIconPopupId
+    }
+
     return (
         <ButtonContext.Provider
-            value={{
-                isLoaded,
-                isOpen,
-                setIsLoaded,
-                handleComponentOpen,
-                progress,
-                setProgress,
-            }}
+            value={contextValue}
         >
             {children}
         </ButtonContext.Provider>
