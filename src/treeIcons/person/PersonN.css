@@ -15,6 +15,19 @@
   font-weight: bold;
 }
 
+@media (max-width: 1500px) {
+  .person-container-n {
+    height: inherit;
+    min-height: 40rem;
+    justify-content: flex-start;
+  }
+
+  .person-container-n-inner {
+    padding: 2rem;
+    font-weight: bold;
+  }
+}
+
 .person-container-n-img {
   padding: 2rem 0 0 1rem;
 }

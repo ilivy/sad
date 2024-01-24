@@ -1,0 +1,33 @@
+---------------------
+  HERE IS THE MAGIC:
+---------------------
+
+
+*** SoundPlayer component ***
+
+The enter point is a "SoundPlayer" component,
+which holds 3 main sound components:
+each for every Tree.
+
+"SoundWrapperN"
+"SoundWrapperS"
+"SoundWrapperZ"
+
+
+*** SoundWrapper component ***
+
+Each SoundWrapper processes a sound of a particular Tree.
+The main purpose of "SoundWrapper" components is to play one song at the moment,
+one after another.
+The order is random.
+One particular song is played by "Sound" component.
+"soundId" state controls which "Sound" should be played.
+
+
+*** Sound component ***
+
+Creates a Music Sphere. Attaches sounds to it. The Sphere is attached to Scene.
+"onEndedObservable"  event is trigger when the track is ended.
+The event is passed to "SoundWrapper" to set a new random "soundId" and play a new song.
+
+

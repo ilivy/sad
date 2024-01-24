@@ -13,7 +13,7 @@ import {
     Color3,
     MeshBuilder,
     SceneLoader,
-    Sound,
+    // Sound,
     WorkerPool,
     VertexOutputBlock,
     NodeMaterialSystemValues,
@@ -43,7 +43,7 @@ import ThirdPage from './ThirdPage';
 import MainMenu from './sidebar/MainMenu';
 import BurgerButton from './sidebar/BurgerButton';
 import IconPopup from './treeIcons/IconPopup';
-// import SoundTreeZ from './SoundTreeZ';
+import SoundPlayer from './soundPlayer/SoundPlayer';
 
 export default function BabylonScene() {
     const { 
@@ -180,64 +180,64 @@ export default function BabylonScene() {
 
         //  Attach Music to the main Trees
 
-        const sphereMat = new StandardMaterial('sphereMat', scene)
-        sphereMat.diffuseColor = Color3.Purple()
-        sphereMat.backFaceCulling = false
-        sphereMat.alpha = 0
+        // const sphereMat = new StandardMaterial('sphereMat', scene)
+        // sphereMat.diffuseColor = Color3.Purple()
+        // sphereMat.backFaceCulling = false
+        // sphereMat.alpha = 0
 
-        const sphereMusicZ = Mesh.CreateSphere('musicsphereZ', 50, 50, scene)
-        sphereMusicZ.material = sphereMat
-        sphereMusicZ.position = new Vector3(248, 25, 360)
+        // const sphereMusicZ = Mesh.CreateSphere('musicsphereZ', 50, 50, scene)
+        // sphereMusicZ.material = sphereMat
+        // sphereMusicZ.position = new Vector3(248, 25, 360)
 
-        const sphereMusicN = Mesh.CreateSphere('musicsphereN', 50, 50, scene)
-        sphereMusicN.material = sphereMat
-        sphereMusicN.position = new Vector3(-391, 25, -27)
+        // const sphereMusicN = Mesh.CreateSphere('musicsphereN', 50, 50, scene)
+        // sphereMusicN.material = sphereMat
+        // sphereMusicN.position = new Vector3(-391, 25, -27)
 
-        const sphereMusicS = Mesh.CreateSphere('musicsphereS', 50, 50, scene)
-        sphereMusicS.material = sphereMat
-        sphereMusicS.position = new Vector3(307, 25, -347)
+        // const sphereMusicS = Mesh.CreateSphere('musicsphereS', 50, 50, scene)
+        // sphereMusicS.material = sphereMat
+        // sphereMusicS.position = new Vector3(307, 25, -347)
 
-        const musicZ1 = new Sound(
-            'Z',
-            './sound/Z/Z11-ambient.mp3',
-            scene,
-            null,
-            {
-                loop: true,
-                autoplay: true,
-                maxDistance: 700,
-                useCustomAttenuation: true,
-            }
-        )
-        musicZ1.attachToMesh(sphereMusicZ);
+        // const musicZ1 = new Sound(
+        //     'Z',
+        //     './sound/Z/Z11-ambient.mp3',
+        //     scene,
+        //     null,
+        //     {
+        //         loop: true,
+        //         autoplay: true,
+        //         maxDistance: 700,
+        //         useCustomAttenuation: true,
+        //     }
+        // )
+        // musicZ1.attachToMesh(sphereMusicZ);
         
-        const musicN1 = new Sound(
-            'N',
-            './sound/N/N_08_chaos_x(1-2).mp3',
-            scene,
-            null,
-            {
-                loop: true,
-                autoplay: true,
-                maxDistance: 700,
-                useCustomAttenuation: true,
-            }
-        )
-        musicN1.attachToMesh(sphereMusicN);
+        // const musicN1 = new Sound(
+        //     'N',
+        //     './sound/N/N_08_chaos_x(1-2).mp3',
+        //     scene,
+        //     null,
+        //     {
+        //         loop: true,
+        //         autoplay: true,
+        //         maxDistance: 700,
+        //         useCustomAttenuation: true,
+        //     }
+        // )
+        // musicN1.attachToMesh(sphereMusicN);
 
-        const musicS1 = new Sound(
-            'S',
-            './sound/S/S-ambient-death01.mp3',
-            scene,
-            null,
-            {
-                loop: true,
-                autoplay: true,
-                maxDistance: 700,
-                useCustomAttenuation: true,
-            }
-        )
-        musicS1.attachToMesh(sphereMusicS);
+        // const musicS1 = new Sound(
+        //     'S',
+        //     './sound/S/S-ambient-death01.mp3',
+        //     scene,
+        //     null,
+        //     {
+        //         loop: true,
+        //         autoplay: true,
+        //         maxDistance: 700,
+        //         useCustomAttenuation: true,
+        //     }
+        // )
+        // musicS1.attachToMesh(sphereMusicS);
 
         setProgress(6)
 
@@ -702,6 +702,8 @@ export default function BabylonScene() {
         // bgPlane_2_tr3.isPickable = true;
         // bgPlane_3_tr3.isPickable = true;
 
+        // scene.skipPointerMovePicking = true;
+
         scene.onPointerObservable.add((pointerInfo) => {
             if (pointerInfo.type == 1) {  // POINTERPICK = 16, POINTERDOWN = 1
                 // console.log(pointerInfo.pickInfo.pickedMesh.name);
@@ -765,7 +767,7 @@ export default function BabylonScene() {
                         break;
                 }
             }
-    });
+        });
 
 
 
@@ -2277,6 +2279,7 @@ export default function BabylonScene() {
             setIsLoaded(true)
             engine.hideLoadingUI()
         })
+        // setProgress(100)
         // setIsLoaded(true)
         // engine.hideLoadingUI()
     }
@@ -2308,9 +2311,7 @@ export default function BabylonScene() {
                 id="my-canvas"
             />
 
-            {/* <SoundPlayer soundFiles={soundFiles} /> */}
-            {/* {isOpen && <SoundPlayer />} */}
-            {/* {isOpen && <SoundTreeZ />} */}
+            {isOpen && <SoundPlayer />}
         </>
     )
 }

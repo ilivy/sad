@@ -11,6 +11,13 @@
     animation: fadeInAnimation 2s ease-in forwards;
 }
 
+@media (max-width: 1500px) {
+    .container-third-page {
+        left: 0;
+        width: 100%;
+    } 
+}
+
 .staticLogo-container {
     opacity: 0;
     text-align: center;
@@ -59,6 +66,7 @@
     opacity: 0;
     text-align: center;
     margin-bottom: 0.8rem;
+    padding: 0 0.8rem;
     font-size: 1rem;
     animation: 7s fadeInAnimation 1s ease-in forwards;
 }

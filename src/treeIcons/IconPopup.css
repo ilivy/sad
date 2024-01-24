@@ -16,6 +16,12 @@
   font-size: 1.4rem;
 }
 
+@media (max-width: 1500px) {
+  .icon-popup-container {
+    width: 90%;
+  }
+}
+
 .icon-popup-container .close-icon {
   position: absolute;
   width: 2rem;

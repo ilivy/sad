@@ -16,6 +16,12 @@
   font-size: 1.4rem;
 }
 
+@media (max-width: 1500px) {
+  .main-menu-container {
+    width: 90%;
+  }
+}
+
 .top-box,
 .bottom-box {
   display: flex;

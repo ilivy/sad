@@ -19,6 +19,22 @@
 }
 
 .artobj-text h2 {
- font-size: 2.4rem;
+  font-size: 2.4rem;
+ }
+
+@media (max-width: 1500px) {
+  .artobj-container {
+    flex-direction: column-reverse;
+  }
+
+  .artobj-photo {
+    width: 100%;
+    padding-right: 1rem;
+    text-align: center;
+  }
+
+  .artobj-text {
+    width: 100%;
+  }
 }
 
