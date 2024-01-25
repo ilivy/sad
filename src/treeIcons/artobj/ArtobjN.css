@@ -19,7 +19,7 @@
 }
 
 .artobj-text h2 {
- font-size: 2.4rem;
+ font-size: 2.2rem;
 }
 
 @media (max-width: 1500px) {
@@ -30,6 +30,7 @@
   .artobj-photo {
     width: 100%;
     padding-right: 1rem;
+    padding-bottom: 2rem;
   }
 
   .artobj-text {

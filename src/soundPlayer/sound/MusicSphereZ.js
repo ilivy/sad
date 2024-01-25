@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Engine } from "@babylonjs/core";
 import {
-  Color3,
+  // Color3,
   Mesh,
   Sound,
   StandardMaterial,
@@ -17,8 +17,8 @@ const MusicSphereZ = ({trackName, onEnded}) => {
   useEffect(() => {
 
     const sphereMat = new StandardMaterial('sphereMat', scene)
-    sphereMat.diffuseColor = Color3.Purple()
-    sphereMat.backFaceCulling = false
+    // sphereMat.diffuseColor = Color3.Purple()
+    // sphereMat.backFaceCulling = false
     sphereMat.alpha = 0
 
     const sphereMusicZ = Mesh.CreateSphere('musicsphereZ', 50, 50, scene)

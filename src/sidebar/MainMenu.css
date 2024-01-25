@@ -38,8 +38,14 @@
 .main-menu-container h4 {
   margin: 0;
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   cursor: pointer;
+}
+
+@media (max-width: 1500px) {
+  .main-menu-container h4.about {
+    margin-bottom: 6rem;
+  }
 }
 
 .main-menu-container h4:hover {
