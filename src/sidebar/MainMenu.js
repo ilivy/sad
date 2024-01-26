@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import { useState } from "react";
 import { useButtonContext } from "../App";
 import "./MainMenu.css";
@@ -18,7 +19,7 @@ const MainMenu = () => {
     }
   };
 
-  return (
+  return ReactDOM.createPortal(
     <div className="main-menu-container">
       <div className="top-box">
         <img
@@ -56,8 +57,9 @@ const MainMenu = () => {
           <br/>В точке пересечений можете оказаться и вы, путешествуя по виртуальному лесу на полуострове Черейского озера и отыскав среди деревьев те, что звучат голосами наших героев. Становитесь посредником между прошлым и будущим, летите на свет, идите на звук, не стесняйтесь эксперимента и не бойтесь взаимодействовать.
         </p>}
       </div>
-    </div>
-    );
+    </div>,
+    document.body
+  );
 }
 
 export default MainMenu;

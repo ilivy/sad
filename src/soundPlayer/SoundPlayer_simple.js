@@ -25,8 +25,8 @@ const SoundPlayer = () => {
 
   const soundFiles = [
     './sound/S/S-ambient-death01.mp3',
-    './sound/N/N_08_chaos_x(1-2).mp3',
-    './sound/Z/Z11-ambient.mp3',
+    './sound/N/N_08.mp3',
+    './sound/Z/Z01.mp3',
   ];
 
   useEffect(() => {

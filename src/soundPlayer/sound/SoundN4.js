@@ -5,7 +5,7 @@ const SoundN4 = ({onEnded}) => {
   return (
     <MusicSphereN 
       onEnded={onEnded} 
-      trackName="./sound/N/N_15.mp3" 
+      trackName="./sound/N/N_05.mp3" 
     />
   )
 }
