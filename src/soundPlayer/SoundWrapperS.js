@@ -1,58 +1,46 @@
-import React, { Suspense, useEffect, useState } from "react";
-const SoundS1 = React.lazy(() => import('./sound/SoundS1'));
-const SoundS2 = React.lazy(() => import('./sound/SoundS2'));
-const SoundS3 = React.lazy(() => import('./sound/SoundS3'));
-const SoundS4 = React.lazy(() => import('./sound/SoundS4'));
-const SoundS5 = React.lazy(() => import('./sound/SoundS5'));
-const SoundS6 = React.lazy(() => import('./sound/SoundS6'));
-const SoundS7 = React.lazy(() => import('./sound/SoundS7'));
-const SoundS8 = React.lazy(() => import('./sound/SoundS8'));
-const SoundS9 = React.lazy(() => import('./sound/SoundS9'));
+import React, { useEffect, useState } from "react";
+import MusicSphereS from './MusicSphereS';
 
 const SoundWrapperS = () => {
-  const [soundSId, setSoundSId] = useState('');
+  const [soundSIdx, setSoundSIdx] = useState(0);
 
-  const getRandomSoundId = (curSoundId = null) => {
+  const getRandomSoundIdx = (curSoundIdx = null) => {
 
     const generateRandomIdx = () => {
       // Generates a random index within the number of mp3 files
       const numFiles = 9;
-      return Math.floor(Math.random() * numFiles) + 1;
+      return Math.floor(Math.random() * numFiles);
     };
-    // console.log("curSoundId: " + curSoundId);
+    // console.log("curSoundIdx: " + curSoundIdx);
 
-    let nextSoundId = "soundS" + generateRandomIdx();
-    while (curSoundId == nextSoundId) {
-      // console.log("once more: cur is - " + curSoundId + " next is - " + nextSoundId);
-      nextSoundId = "soundS" + generateRandomIdx();
+    let nextSoundIdx = generateRandomIdx();
+    while (curSoundIdx == nextSoundIdx) {
+      // console.log("once more: cur is - " + curSoundIdx + " next is - " + nextSoundIdx);
+      nextSoundIdx = generateRandomIdx();
     }
-    return nextSoundId;
+    return nextSoundIdx;
   }
   
   useEffect(() => {
-    const rsi = getRandomSoundId();
-    setSoundSId(rsi);
-    console.log("setSoundSId: " + rsi);
+    const rsi = getRandomSoundIdx();
+    setSoundSIdx(rsi);
+    console.log("setSoundSIdx: " + rsi);
   }, []);
 
+  // const handleOnEnded = useCallback(() => {
+  //   const rsi = getRandomSoundIdx(soundSIdx);
+  //   setSoundSIdx(rsi);
+  //   console.log("setSoundSIdx: " + rsi);
+  // }, [soundSIdx])
+
   const handleOnEnded = () => {
-    const rsi = getRandomSoundId(soundSId);
-    setSoundSId(rsi);
-    console.log("setSoundSId: " + rsi);
+    const rsi = getRandomSoundIdx(soundSIdx);
+    setSoundSIdx(rsi);
+    console.log("setSoundSIdx: " + rsi);
   }
 
   return (
-    <>
-      {soundSId === "soundS1" && <Suspense><SoundS1 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS2" && <Suspense><SoundS2 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS3" && <Suspense><SoundS3 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS4" && <Suspense><SoundS4 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS5" && <Suspense><SoundS5 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS6" && <Suspense><SoundS6 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS7" && <Suspense><SoundS7 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS8" && <Suspense><SoundS8 onEnded={handleOnEnded} /></Suspense>}
-      {soundSId === "soundS9" && <Suspense><SoundS9 onEnded={handleOnEnded} /></Suspense>}
-    </>
+    <MusicSphereS soundSIdx={soundSIdx} onEnded={handleOnEnded} />
   );
 
 };

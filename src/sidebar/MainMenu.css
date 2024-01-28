@@ -31,20 +31,21 @@
 
 .top-box .text,
 .bottom-box .text {
+  margin-top: 0;
   text-align: right;
   animation: fadeInAnimation 1s ease-in forwards;
 }
 
 .main-menu-container h4 {
-  margin: 0;
+  margin: 1rem 0 0 0;
   font-weight: 600;
   font-size: 2.2rem;
   cursor: pointer;
 }
 
 @media (max-width: 1500px) {
-  .main-menu-container h4.about {
-    margin-bottom: 6rem;
+  .bottom-box {
+    padding-bottom: 6rem;
   }
 }
 
@@ -60,4 +61,11 @@
 .close-icon:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.btn-pilot {
+  margin-top: 1rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }

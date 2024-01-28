@@ -4,9 +4,9 @@ import { useButtonContext } from "../App";
 import "./MainMenu.css";
 
 const MainMenu = () => {
-  const { setIsBurgerPopupOpen } = useButtonContext();
+  const { setIsBurgerPopupOpen, setIsAutopilotOn } = useButtonContext();
   const [ itemToShow, setItemToShow ] = useState('');
-    
+
   const handleCloseBtnClick = () => {
     setIsBurgerPopupOpen(false);
   };
@@ -19,6 +19,11 @@ const MainMenu = () => {
     }
   };
 
+  const handleClickBtnAutopilot = (isOn) => {
+    setIsBurgerPopupOpen(false);
+    setIsAutopilotOn(isOn);
+  };
+
   return ReactDOM.createPortal(
     <div className="main-menu-container">
       <div className="top-box">
@@ -28,11 +33,31 @@ const MainMenu = () => {
           className="close-icon"
           onClick={handleCloseBtnClick}
         />
+        <h4 onClick={() => handleClickItem("autopilot")}>Ты слушаешь</h4>
+        {itemToShow === "autopilot" && <p className="text">
+          Режим автопилота:
+          <br/>перемещаемся рандомно по лесу и
+          <br/>слушаем бесконечный микс
+          <br/>
+          <button className="btn-pilot" onClick={() => handleClickBtnAutopilot(true)}>
+            <img
+              src="/jpg/btn/autopilot.png"
+              alt="Pilot"
+            />
+          </button>
+        </p>}
         <h4 onClick={() => handleClickItem("pilot")}>Ты играешь</h4>
         {itemToShow === "pilot" && <p className="text">
           Двигаемся в любом направлении,
           <br/>трогаем предметы,
           <br/>взаимодействуем с окружением
+          <br/>
+          <button className="btn-pilot" onClick={() => handleClickBtnAutopilot(false)}>
+            <img
+              src="/jpg/btn/pilot.png"
+              alt="Pilot"
+            />
+          </button>
         </p>}
       </div>
       <div className="bottom-box">
