@@ -24,19 +24,13 @@ const SoundWrapperS = () => {
   useEffect(() => {
     const rsi = getRandomSoundIdx();
     setSoundSIdx(rsi);
-    console.log("setSoundSIdx: " + rsi);
+    // console.log("setSoundSIdx: " + rsi);
   }, []);
-
-  // const handleOnEnded = useCallback(() => {
-  //   const rsi = getRandomSoundIdx(soundSIdx);
-  //   setSoundSIdx(rsi);
-  //   console.log("setSoundSIdx: " + rsi);
-  // }, [soundSIdx])
 
   const handleOnEnded = () => {
     const rsi = getRandomSoundIdx(soundSIdx);
     setSoundSIdx(rsi);
-    console.log("setSoundSIdx: " + rsi);
+    // console.log("setSoundSIdx: " + rsi);
   }
 
   return (

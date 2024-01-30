@@ -24,20 +24,17 @@ const SoundWrapperN = () => {
   useEffect(() => {
     const rsi = getRandomSoundIdx();
     setSoundNIdx(rsi);
-    console.log("setSoundNIdx: " + rsi);
+    // console.log("setSoundNIdx: " + rsi);
   }, []);
 
   const handleOnEnded = () => {
     const rsi = getRandomSoundIdx(soundNIdx);
     setSoundNIdx(rsi);
-    console.log("setSoundNIdx: " + rsi);
+    // console.log("setSoundNIdx: " + rsi);
   }
 
   return (
-    <>
-      <MusicSphereN soundNIdx={soundNIdx} onEnded={handleOnEnded} />
-      {/* {soundNIdx && <MusicSphereN soundNIdx={soundNIdx} onEnded={handleOnEnded} />} */}
-    </>
+    <MusicSphereN soundNIdx={soundNIdx} onEnded={handleOnEnded} />
   );
 
 };

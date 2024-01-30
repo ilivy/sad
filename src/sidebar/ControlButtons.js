@@ -139,12 +139,18 @@ const ControlButtons = () => {
         }
       }
 
-      // main Autopilot processor
-      autopilotSetNextMovement();
-
-      intervalAutopilotRef.current = setInterval(() => {
+      if (sceneRef.current.activeCamera.position.y) {  // Check if camera if fully initialized
+        // main Autopilot processor
         autopilotSetNextMovement();
-      }, 5000);
+  
+        intervalAutopilotRef.current = setInterval(() => {
+          autopilotSetNextMovement();
+        }, 5000);
+
+      } else {
+        setIsAutopilotOn(false);  // "Autopilot" failed to start, maybe next time
+      }
+
     }
 
 
@@ -155,7 +161,7 @@ const ControlButtons = () => {
 
         let distanceToMove = 2;
         if (movingDirection == "GoDown") {
-          distanceToMove = - 2;
+          distanceToMove = -2;
         }
 
         const amount = 1;
@@ -172,9 +178,6 @@ const ControlButtons = () => {
     }
 
     if (movingDirection == "GoLeft") {
-      console.log("current position: " + sceneRef.current.activeCamera.position);
-      console.log("current length: " + sceneRef.current.activeCamera.position.length());
-
       intervalDirectionRef.current = setInterval(() => {
 
       sceneRef.current.activeCamera.position.addInPlace(
@@ -221,15 +224,15 @@ const ControlButtons = () => {
   return (
     <div className="control-buttons-wrap">
       <div>
-        <button onClick={() => { handleButtonClick("GoUp")}}>↑</button>
+        <button onClick={() => { handleButtonClick("GoUp")}} className="ctrl-bt-up"></button>
       </div>
       <div className="control-buttons-middle">
-        <button onClick={() => { handleButtonClick("GoLeft")}}>←</button>
-        <button onClick={() => { handleButtonClick("Stop")}} className="pause-icon">||</button>
-        <button onClick={() => { handleButtonClick("GoRight")}}>→</button>
+        <button onClick={() => { handleButtonClick("GoLeft")}} className="ctrl-bt-left"></button>
+        <button onClick={() => { handleButtonClick("Stop")}} className="ctrl-bt-stop"></button>
+        <button onClick={() => { handleButtonClick("GoRight")}} className="ctrl-bt-right"></button>
       </div>
       <div>
-        <button onClick={() => { handleButtonClick("GoDown")}}>↓</button>
+        <button onClick={() => { handleButtonClick("GoDown")}} className="ctrl-bt-down"></button>
       </div>
     </div>
   )

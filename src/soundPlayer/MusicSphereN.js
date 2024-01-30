@@ -54,7 +54,7 @@ const MusicSphereN = ({soundNIdx, onEnded}) => {
 
     return () => {
       // Cleanup: Stop playing sound and remove sphere when component unmounts
-      console.log("sphereMusicN.dispose()");
+      // console.log("sphereMusicN.dispose()");
       musicN.stop();
       musicN.onEndedObservable.removeCallback(onEnded);
       musicN.dispose();

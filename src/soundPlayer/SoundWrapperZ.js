@@ -24,21 +24,15 @@ const SoundWrapperZ = () => {
   useEffect(() => {
     const rsi = getRandomSoundIdx();
     setSoundZIdx(rsi);
-    console.log("setSoundZIdx: " + rsi);
+    // console.log("setSoundZIdx: " + rsi);
   }, []);
 
 
   const handleOnEnded = () => {
     const rsi = getRandomSoundIdx(soundZIdx);
     setSoundZIdx(rsi);
-    console.log("setSoundZIdx: " + rsi);
+    // console.log("setSoundZIdx: " + rsi);
   }
-
-  // const handleOnEnded = useCallback(() => {
-  //   const rsi = getRandomSoundIdx(soundZIdx);
-  //   setSoundZIdx(rsi);
-  //   console.log("setSoundZIdx: " + rsi);
-  // }, [soundZIdx])
 
   return (
     <MusicSphereZ soundZIdx={soundZIdx} onEnded={handleOnEnded} />

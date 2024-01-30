@@ -10,16 +10,30 @@
   height: 2.2rem;
   line-height: 1.8rem;
   margin: 0.2rem;
-  width: 3rem;
-  background: white;
+  width: 2rem;
   border-color: #67c8fc;
   border-radius: 0.4rem;
   font-size: 2rem;
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
-.control-buttons-wrap .pause-icon {
-  font-size: 1rem;
+.ctrl-bt-up {
+  background-image: url('/public/jpg/btn/arrow-up.png');
+}
+.ctrl-bt-left {
+  background-image: url('/public/jpg/btn/arrow-left.png');
+}
+.ctrl-bt-down {
+  background-image: url('/public/jpg/btn/arrow-down.png');
+}
+.ctrl-bt-right {
+  background-image: url('/public/jpg/btn/arrow-right.png');
+}
+.ctrl-bt-stop {
+  background-image: url('/public/jpg/btn/arrow-stop.png');
 }
 
 @media (max-width: 1500px) {

@@ -53,12 +53,12 @@ const MusicSphereZ = ({soundZIdx, onEnded}) => {
     musicZ.attachToMesh(sphereMusicZ);
     return () => {
       // Cleanup: Stop playing sound and remove sphere when component unmounts
+      // console.log("sphereMusicZ.dispose()");
       musicZ.stop();
       musicZ.onEndedObservable.removeCallback(onEnded);
       musicZ.dispose();
 
       sphereMusicZ.dispose();
-      console.log("sphereMusicZ.dispose()");
     };
   }, [soundZIdx]);
 
