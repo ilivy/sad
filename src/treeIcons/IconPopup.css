@@ -25,13 +25,16 @@
 .icon-popup-container .close-icon {
   position: absolute;
   width: 2rem;
-  /* padding: 0 1rem 1rem 0; */
   top: 2rem;
-  right: 2rem
+  right: 2rem;
+  border: none;
+  background-color: #fff;
 }
 
-.icon-popup-container .close-icon:hover {
-  cursor: pointer;
-  opacity: 0.8;
+#close-pp {
+  position: relative;
+  top: -2rem;
+  left: 0.4rem;
+  font-size: 1.2rem;
+  color: black;
 }
-

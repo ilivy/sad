@@ -27,12 +27,13 @@ const MainMenu = () => {
   return ReactDOM.createPortal(
     <div className="main-menu-container">
       <div className="top-box">
-        <img
-          src="/jpg/icon/close_x.png"
-          alt="Close"
-          className="close-icon"
-          onClick={handleCloseBtnClick}
-        />
+        <button className="close-icon" onClick={handleCloseBtnClick}>
+          <img
+            src="/jpg/icon/close_x.png"
+            alt="Close"
+          />
+          <span id="close-mm">x</span>
+        </button>
         <h4 onClick={() => handleClickItem("autopilot")}>Ты слушаешь</h4>
         {itemToShow === "autopilot" && <p className="text">
           Режим автопилота:
@@ -42,8 +43,9 @@ const MainMenu = () => {
           <button className="btn-pilot" onClick={() => handleClickBtnAutopilot(true)}>
             <img
               src="/jpg/btn/autopilot.png"
-              alt="Pilot"
+              alt="Autopilot"
             />
+            <span id="autopilot-on">Autopilot</span>
           </button>
         </p>}
         <h4 onClick={() => handleClickItem("pilot")}>Ты играешь</h4>
@@ -57,6 +59,7 @@ const MainMenu = () => {
               src="/jpg/btn/pilot.png"
               alt="Pilot"
             />
+            <span id="autopilot-off">Pilot</span>
           </button>
         </p>}
       </div>

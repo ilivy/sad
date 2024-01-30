@@ -12,12 +12,13 @@ const IconPopup = () => {
 
   return ReactDOM.createPortal(
     <div className="icon-popup-container">
-      <img
-        src="/jpg/icon/close_x.png"
-        alt="Close"
-        className="close-icon"
-        onClick={handleCloseBtnClick}
-      />
+      <button className="close-icon" onClick={handleCloseBtnClick}>
+        <img
+          src="/jpg/icon/close_x.png"
+          alt="Close"
+        />
+        <span id="close-pp">x</span>
+      </button>
       <IconPopupContent iconPopupId={iconPopupId} />
     </div>,
     document.body

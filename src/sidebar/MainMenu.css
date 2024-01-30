@@ -54,18 +54,47 @@
 }
 
 .close-icon {
-  width: 2rem;
   padding-bottom: 1rem;
+  cursor: pointer;
+  border: none;
+  background: #fff;
 }
 
-.close-icon:hover {
-  cursor: pointer;
-  opacity: 0.8;
+.close-icon img {
+  width: 2rem;
+}
+
+#close-mm {
+  position: relative;
+  top: -0.6rem;
+  left: -1.2rem;
+  font-size: 1.2rem;
+  color: black;
 }
 
 .btn-pilot {
+  position: relative;
   margin-top: 1rem;
   padding: 0;
   border: none;
   cursor: pointer;
+  background: #fff;
+  min-width: 5rem;
+}
+
+.btn-pilot img {
+  position: relative;
+  z-index: 1;
+}
+
+#autopilot-on,
+#autopilot-off {
+  /* if <img> is not loaded yet */
+  position: absolute;
+  background-color: #93d5f8;
+  padding: 0.2rem;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  font-size: 1.2rem;
 }
