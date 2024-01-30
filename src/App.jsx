@@ -22,6 +22,9 @@ export const ButtonProvider = ({ children }) => {
     const [isIconPopupOpen, setIsIconPopupOpen] = useState(false);
     const [iconPopupId, setIconPopupId] = useState('');
 
+    // Autopilot mode
+    const [isAutopilotOn, setIsAutopilotOn] = useState(false);
+
 
     const handleComponentOpen = (value) => {
         setIsOpen(value)
@@ -41,7 +44,10 @@ export const ButtonProvider = ({ children }) => {
         isIconPopupOpen,
         setIsIconPopupOpen,
         iconPopupId,
-        setIconPopupId
+        setIconPopupId,
+
+        isAutopilotOn,
+        setIsAutopilotOn,
     }
 
     return (
