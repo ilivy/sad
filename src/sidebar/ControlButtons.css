@@ -1,0 +1,35 @@
+.control-buttons-wrap {
+  display: none;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+}
+
+.control-buttons-wrap button {
+  display: inline-block;
+  height: 2.2rem;
+  line-height: 1.8rem;
+  margin: 0.2rem;
+  width: 3rem;
+  background: white;
+  border-color: #67c8fc;
+  border-radius: 0.4rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.control-buttons-wrap .pause-icon {
+  font-size: 1rem;
+}
+
+@media (max-width: 1500px) {
+  .control-buttons-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .control-buttons-middle {
+    display: flex;
+  }
+}
