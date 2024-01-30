@@ -55,7 +55,7 @@ function ThirdPage({ onClose }) {
                 <div className="sprava-logo-text">проект фестиваля</div>
                 <div className="sprava-logo-container">
                     <img
-                        src="/jpg/Sprava_logo.png"
+                        src="/jpg/logo/sprava.png"
                         alt="Sprava"
                         className="sprava-logo-static"
                     />
