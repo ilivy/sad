@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Engine } from "@babylonjs/core";
 import {
-  Mesh,
   Sound,
-  StandardMaterial,
+  TransformNode,
   Vector3
 } from '@babylonjs/core';
 
@@ -30,11 +29,7 @@ const MusicSphereZ = ({soundZIdx, onEnded}) => {
     const trackName = trackArray[soundZIdx];
     console.log(trackName);
 
-    const sphereMat = new StandardMaterial('sphereMat', sceneRef.current);
-    sphereMat.alpha = 0;
-
-    const sphereMusicZ = Mesh.CreateSphere('musicsphereZ', 50, 50, sceneRef.current);
-    sphereMusicZ.material = sphereMat;
+    const sphereMusicZ = new TransformNode('musicNnode');
     sphereMusicZ.position = new Vector3(248, 25, 360);
 
     const musicZ = new Sound(
@@ -45,7 +40,7 @@ const MusicSphereZ = ({soundZIdx, onEnded}) => {
       {
           loop: false,
           autoplay: true,
-          maxDistance: 700,
+          maxDistance: 750,
           useCustomAttenuation: true,
       }
     )
