@@ -38,8 +38,15 @@ const ControlButtons = () => {
         // main challenge: not to go far away from the center
         // returns: new coordinates: X and Z with values between -400 and 400
 
-        const x = sceneRef.current.activeCamera.position.x;
-        const z = sceneRef.current.activeCamera.position.z;
+        let x = 0;  // the initial position, in case
+        let z = 0;  //     if the function is called in the very beginning
+        if (!isNaN(sceneRef.current.activeCamera.position.x)) {
+          x = sceneRef.current.activeCamera.position.x;
+        }
+        if (!isNaN(sceneRef.current.activeCamera.position.z)) {
+          z = sceneRef.current.activeCamera.position.z;
+        }
+
         // Random num in (0, 400)
         const random_0_400 = () => {return Math.floor(Math.random() * 400)};
         // Random num in (-400, 0)
@@ -47,12 +54,12 @@ const ControlButtons = () => {
         let randomX;
         let randomZ;
 
-        if (x > 0 && z > 0) {
+        if (x >= 0 && z >= 0) {
           // Go to Left Bottom
           randomX = random_m400_0();
           randomZ = random_m400_0();
         }
-        if (x < 0 && z > 0) {
+        if (x < 0 && z >= 0) {
           // Go to Top Left
           randomX = random_0_400();
           randomZ = random_m400_0();
@@ -63,7 +70,7 @@ const ControlButtons = () => {
           randomX = random_0_400();
           randomZ = random_0_400();
         }
-        if (x > 0 && z < 0) {
+        if (x >= 0 && z < 0) {
           // Go to Bottom Right
           randomX = random_m400_0();
           randomZ = random_0_400();
@@ -77,8 +84,15 @@ const ControlButtons = () => {
         // to point camera to the new Vector
         // with desired nextX, nextZ coordinates
 
-        const curX = sceneRef.current.activeCamera.target.x;
-        const curZ = sceneRef.current.activeCamera.target.z;
+        let curX = -5;  // the initial position, in case
+        let curZ = -5;  //     if the function is called in the very beginning
+
+        if (!isNaN(sceneRef.current.activeCamera.target.x)) {
+          curX = sceneRef.current.activeCamera.target.x;
+        }
+        if (!isNaN(sceneRef.current.activeCamera.target.z)) {
+          curZ = sceneRef.current.activeCamera.target.z;
+        }
 
         const deltaX = (nextX - curX) / 100;
         const deltaZ = (nextZ - curZ) / 100;
@@ -114,11 +128,13 @@ const ControlButtons = () => {
         //
         // runs every 5 seconds
         // checks if we are far away from the center
+        // (or in some random cases (Math.random() > 0.8))
         // if yes: sets interval to turn closer to the center slowly
         // if no: sets interval to go forward slowly
 
         if (sceneRef.current.activeCamera.position.length() > 300
             || Math.random() > 0.8) {
+
           clearInterval(intervalAutopilotStepRef.current);
           clearInterval(intervalAutopilotTurnRef.current);
 
@@ -139,18 +155,12 @@ const ControlButtons = () => {
         }
       }
 
-      if (sceneRef.current.activeCamera.position.y) {  // Check if camera if fully initialized
-        // main Autopilot processor
-        autopilotSetNextMovement();
+      // main Autopilot processor
+      autopilotSetNextMovement();
   
-        intervalAutopilotRef.current = setInterval(() => {
-          autopilotSetNextMovement();
-        }, 5000);
-
-      } else {
-        setIsAutopilotOn(false);  // "Autopilot" failed to start, maybe next time
-      }
-
+      intervalAutopilotRef.current = setInterval(() => {
+        autopilotSetNextMovement();
+      }, 5000);
     }
 
 
