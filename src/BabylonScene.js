@@ -205,16 +205,36 @@ export default function BabylonScene() {
             }
         });
 
+        // function onProgressLoading(event) {
+        const onProgressLoading = (event) => {
+            if (event.lengthComputable) {
+                let progress = event.loaded / event.total;
+                progress = Math.round(progress * 100) / 100;
+                
+                // console.log(progress);
+                // we need to scale the current loading from 20% to 100%
+                let progressScaled = 20 + (progress / 1.25) * 100;
+                progressScaled = Math.round(progressScaled);
+                // console.log(progressScaled);
+                setProgress(progressScaled);
+                
+                // if (progress >= 0.98) {
+                //     setProgress(100)
+                // }
+            }
+        }
+
         //
         // Loading 3 main Trees
         //
         loadMainTrees(
             './main_trees/M_Tree_1.obj', 
             scene,
+            onProgressLoading,
             () => {
-                setProgress(100);  // to comment
-                setIsLoaded(true);  // to comment
-                engine.hideLoadingUI();  // to comment
+                setProgress(100);
+                setIsLoaded(true);
+                engine.hideLoadingUI();
             },
         );
 

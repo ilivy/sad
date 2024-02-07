@@ -5,7 +5,8 @@ import {
   SceneLoader,
   StandardMaterial,
   TransformNode,
-  Vector3
+  Vector3,
+  WorkerPool
 } from '@babylonjs/core';
 // import {
 //   Color3,
@@ -32,7 +33,7 @@ import {
 //   VectorSplitterBlock,
 // } from '@babylonjs/core';
 
-const loadMainTrees = (objUrl, scene, onLoad) => {
+const loadMainTrees = (objUrl, scene, onProgressLoading, onLoad) => {
 
   const trunkHeight = 80;
   const trunkRadius = 0.5;
@@ -93,11 +94,20 @@ const loadMainTrees = (objUrl, scene, onLoad) => {
     }
   }
 
+  const workerPool = new WorkerPool([4]);
+
   SceneLoader.ImportMeshAsync(
       '',
       '/',
       objUrl,
-      scene
+      scene,
+      onProgressLoading,
+      '.obj',
+      '',
+      '',
+      undefined,
+      undefined,
+      workerPool
   ).then(({ meshes }) => {
 
       // const treeSmodel = meshes[0];
