@@ -4,7 +4,7 @@ import { Loader } from './starter/Loader'
 import { MemoryText } from './starter/MemoryText'
 import { Languages } from './starter/Languages'
 import { useButtonContext } from './App'
-import SecondPage from './SecondPage'
+// import SecondPage from './SecondPage'
 import './StarterPage.css'
 
 const StarterPage = () => {
@@ -42,7 +42,7 @@ const StarterPage = () => {
         if (isLoaded) {
             const openComponentTimeout = setTimeout(() => {
                 handleComponentOpen(true)
-            }, 13000)
+            }, 1000)
 
             return () => {
                 clearTimeout(openComponentTimeout)
@@ -54,7 +54,7 @@ const StarterPage = () => {
         if (isLoaded && showSecondPage) {
             const thirdPageTimeout = setTimeout(() => {
                 setShowSecondPage(false)
-            }, 20000)
+            }, 20000) // 20000
 
             return () => {
                 clearTimeout(thirdPageTimeout)
@@ -74,7 +74,8 @@ const StarterPage = () => {
     }
 
     function renderSecondPage() {
-        return showSecondPage && <SecondPage />
+        return <></>
+        // return showSecondPage && <SecondPage />
     }
 
     return (
