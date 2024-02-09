@@ -18,16 +18,15 @@
     } 
 }
 
-.staticLogo-container {
+.logo-container {
     opacity: 0;
     text-align: center;
-    margin-top: 0;
+    margin-top: 2rem;
     animation: 2s fadeInAnimation 2s ease-in forwards;
 }
 
-.statLogo {
-    max-width: 450px;
-    max-height: 450px;
+.stat-logo {
+    max-width: 6rem;
 }
 
 .welcomeText-container {

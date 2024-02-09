@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
-import StarterPage from './StarterPage'
+import React, { useEffect } from 'react';
+import StarterPage from './StarterPage';
 
-import { createContext, useContext, useState } from 'react'
-import BabylonScene from './BabylonScene'
+import { createContext, useContext, useState } from 'react';
+import BabylonScene from './BabylonScene';
 
-const ButtonContext = createContext()
+const ButtonContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const ButtonProvider = ({ children }) => {
@@ -27,7 +27,7 @@ export const ButtonProvider = ({ children }) => {
 
 
     const handleComponentOpen = (value) => {
-        setIsOpen(value)
+        setIsOpen(value);
     }
 
     const contextValue = {
@@ -60,11 +60,11 @@ export const ButtonProvider = ({ children }) => {
 }
 
 export const useButtonContext = () => {
-    const context = useContext(ButtonContext)
+    const context = useContext(ButtonContext);
     if (!context) {
-        throw new Error('useButtonContext must be used within a ButtonProvider')
+        throw new Error('useButtonContext must be used within a ButtonProvider');
     }
-    return context
+    return context;
 }
 
 export const App = () => {
@@ -73,15 +73,15 @@ export const App = () => {
 
     useEffect(() => {
         const toStartLoadingSceneTimeout = setTimeout(() => {
-            setToStartLoadingScene(true)
-            // setToStartLoadingScene(false)
+            setToStartLoadingScene(true);
+            // setToStartLoadingScene(false);
         }, 1000)
 
         // Cleanup function to clear timeouts on unmount
         return () => {
-            clearTimeout(toStartLoadingSceneTimeout)
+            clearTimeout(toStartLoadingSceneTimeout);
         }
-    }, [])
+    }, []);
 
 
     return (

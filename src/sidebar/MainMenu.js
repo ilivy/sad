@@ -64,10 +64,16 @@ const MainMenu = () => {
         </p>}
       </div>
       <div className="bottom-box">
-        {itemToShow !== "about" && <img
-          src="/jpg/logo/static_small.png"
-          alt="SAD logo"
-        />}
+        {itemToShow !== "about" && 
+          <a href="https://www.google.com/maps/place/54%C2%B038'30.0%22N+29%C2%B018'29.6%22E"
+            target="_blank" 
+            rel="noreferrer">
+              <img
+                src="/jpg/logo/static_small.gif"
+                alt="SAD logo"
+              />
+          </a>
+        }
         <h4 onClick={() => handleClickItem("about")} className="about">О проекте</h4>
         {itemToShow === "about" && <p className="text">
           <span className="text-bold">«Sad Orchestra»</span> (Оркестр Сад) — экспериментальный проект от команды <span className="text-bold">SPRAVA</span>, посвященный трем важным фигурам независимого беларуского искусства. Нашим ушедшим современникам:

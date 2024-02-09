@@ -8,8 +8,7 @@
 }
 
 .logo-gif {
-    max-width: 450px;
-    max-height: 450px;
+    max-width: 10rem;
     opacity: 0;
     animation: logo1Animation 2s ease-in forwards;
 }

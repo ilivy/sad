@@ -43,6 +43,10 @@
   cursor: pointer;
 }
 
+.bottom-box img {
+  max-width: 6rem;
+}
+
 @media (max-width: 1500px) {
   .bottom-box {
     padding-bottom: 6rem;
