@@ -26,6 +26,7 @@ const ControlButtons = () => {
   useEffect(() => {
     sceneRef.current = getScene();
     const verticalLevel = 20;
+    const maxDistanceMovingDirection = 500;
 
     // *** AUTOPILOT ***
 
@@ -173,26 +174,37 @@ const ControlButtons = () => {
         if (movingDirection == "GoDown") {
           distanceToMove = -2;
         }
-
-        const amount = 1;
         const frontPosition = sceneRef.current.activeCamera.getFrontPosition(distanceToMove);
-        frontPosition.y = verticalLevel;
+        if (frontPosition.length() > maxDistanceMovingDirection) {
+          // Do not go too far from the center
+          clearInterval(intervalDirectionRef.current);
+          setMovingDirection("Stop");
+        } else {
+          const amount = 1;
+          frontPosition.y = verticalLevel;
 
-        sceneRef.current.activeCamera.position = Vector3.Lerp(
-          sceneRef.current.activeCamera.position,
-          frontPosition,
-          amount
-        );
+          sceneRef.current.activeCamera.position = Vector3.Lerp(
+            sceneRef.current.activeCamera.position,
+            frontPosition,
+            amount
+          );
+        }
 
       }, 100);
     }
 
     if (movingDirection == "GoLeft") {
-      intervalDirectionRef.current = setInterval(() => {
+      intervalDirectionRef.current = setInterval(() => {300
 
-      sceneRef.current.activeCamera.position.addInPlace(
-        sceneRef.current.activeCamera.getDirection(Vector3.Left())
-      );
+        if (sceneRef.current.activeCamera.position.length() > maxDistanceMovingDirection) {
+          // Do not go too far from the center
+          clearInterval(intervalDirectionRef.current);
+          setMovingDirection("Stop");
+        } else {
+          sceneRef.current.activeCamera.position.addInPlace(
+            sceneRef.current.activeCamera.getDirection(Vector3.Left())
+          );
+        }
 
       }, 100);
     }
@@ -200,9 +212,15 @@ const ControlButtons = () => {
     if (movingDirection == "GoRight") {
       intervalDirectionRef.current = setInterval(() => {
 
-      sceneRef.current.activeCamera.position.addInPlace(
-        sceneRef.current.activeCamera.getDirection(Vector3.Right())
-      );
+        if (sceneRef.current.activeCamera.position.length() > maxDistanceMovingDirection) {
+          // Do not go too far from the center
+          clearInterval(intervalDirectionRef.current);
+          setMovingDirection("Stop");
+        } else {
+          sceneRef.current.activeCamera.position.addInPlace(
+            sceneRef.current.activeCamera.getDirection(Vector3.Right())
+          );
+        }
 
       }, 100);
     }

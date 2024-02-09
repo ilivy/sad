@@ -131,6 +131,19 @@ export default function BabylonScene() {
         //finally, say which mesh will be collisionable
         ground.checkCollisions = true;
 
+        //Invisible walls not to cross
+        const walls = MeshBuilder.CreateBox("crate", {
+            width: 1200, 
+            height: 100,
+            depth: 1200,
+            sideOrientation: 1
+        }, scene);
+
+        walls.isVisible = false;
+        // walls.diffuseColor = Color3.White();
+        walls.position = new Vector3(0, 0, 0);
+        walls.checkCollisions = true;
+
 
         setProgress(6);
 
