@@ -15,7 +15,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
   .person-container {
     height: inherit;
     min-height: 40rem;

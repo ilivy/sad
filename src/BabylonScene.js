@@ -22,6 +22,7 @@ import ControlButtons from "./sidebar/ControlButtons";
 import IconPopup from './treeIcons/IconPopup';
 import SoundPlayer from './soundPlayer/SoundPlayer';
 import createTreeIcons from './helper/treeIcon';
+import loadMinorTrees from './helper/minorTree';
 import loadMainTrees from './helper/mainTree';
 
 export default function BabylonScene() {
@@ -41,7 +42,7 @@ export default function BabylonScene() {
     const [isClose, setIsClose] = useState(false)
 
     const onSceneReady = async (scene) => {
-        setProgress(0)
+        setProgress(0);
         const engine = scene.getEngine();
         const canvas = engine.getRenderingCanvas();
 
@@ -238,6 +239,11 @@ export default function BabylonScene() {
         }
 
         //
+        // Loading minor Trees
+        //
+        loadMinorTrees(scene, light);
+
+        //
         // Loading 3 main Trees
         //
         loadMainTrees(
@@ -253,34 +259,6 @@ export default function BabylonScene() {
 
         // This feature uses memory, we turn it off
         engine.enableOfflineSupport = false;
-
-        // const workerPool = new WorkerPool([4])
-
-        // setProgress(90)
-        // await SceneLoader.ImportMeshAsync(
-        //     '',
-        //     '/',
-        //     './minor_trees/trees_minor.obj',
-        //     scene,
-        //     onProgressLoading,
-        //     '.obj',
-        //     '',
-        //     '',
-        //     undefined,
-        //     undefined,
-        //     workerPool
-        // ).then(({meshes}) => {
-        //     const minor_trees_meshes = meshes[0]
-        //     light.excludedMeshes.push(minor_trees_meshes)
-        //     minor_trees_meshes.rotation = new Vector3(0, 30, 0)
-        //     minor_trees_meshes.position = new Vector3(0, 0, 0)
-        //     setProgress(100)
-        //     setIsLoaded(true)
-        //     engine.hideLoadingUI()
-        // })
-        // setProgress(100);  // to comment
-        // setIsLoaded(true);  // to comment
-        // engine.hideLoadingUI();  // to comment
     }
     // #end onSceneReady
 

@@ -27,7 +27,7 @@ const MusicSphereZ = ({soundZIdx, onEnded}) => {
       "./sound/Z/Z11.mp3",
     ];
     const trackName = trackArray[soundZIdx];
-    console.log(trackName);
+    console.log(trackName.slice(10));
 
     const sphereMusicZ = new TransformNode('musicNnode');
     sphereMusicZ.position = new Vector3(248, 25, 360);

@@ -16,7 +16,7 @@
   font-size: 1.4rem;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
   .main-menu-container {
     width: 90%;
   }
@@ -47,7 +47,7 @@
   max-width: 6rem;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
   .bottom-box {
     padding-bottom: 6rem;
   }

@@ -16,7 +16,7 @@
   font-size: 1.4rem;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
   .icon-popup-container {
     width: 90%;
   }

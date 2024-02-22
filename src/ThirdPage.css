@@ -11,7 +11,7 @@
     animation: fadeInAnimation 2s ease-in forwards;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
     .container-third-page {
         left: 0;
         width: 100%;

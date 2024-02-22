@@ -36,7 +36,7 @@
   background-image: url('/public/jpg/btn/arrow-stop.png');
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
   .control-buttons-wrap {
     display: flex;
     flex-direction: column;
