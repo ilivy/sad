@@ -12,7 +12,7 @@ const ControlButtons = () => {
 
   // direction of Camera movement, set by clicking control buttons
   const [movingDirection, setMovingDirection] = useState('Stop');
-  
+
   // is used for control buttons
   const intervalDirectionRef = useRef(null);
 
@@ -20,8 +20,6 @@ const ControlButtons = () => {
   const intervalAutopilotRef = useRef(null);
   const intervalAutopilotStepRef = useRef(null);
   const intervalAutopilotTurnRef = useRef(null);
-
-  
 
   useEffect(() => {
     sceneRef.current = getScene();

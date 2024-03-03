@@ -48,12 +48,13 @@ const loadMinorTrees = (scene, light) => {
     const minorTreeModel = meshes[0];
     light.excludedMeshes.push(minorTreeModel);
     minorTreeModel.rotation.x = Math.PI / 2;
-    minorTreeModel.position = new Vector3(10, 40, 10);
+    minorTreeModel.position = new Vector3(50, 40, 50);
 
     for (let i=1; i<100; i++) {
       const mtreeInstance = minorTreeModel.createInstance("minorTreeNInstance" + i);
-      let xCoord = Math.floor(Math.random() * 1200) - 600 - 300;  // from -700 to 500
-      let zCoord = Math.floor(Math.random() * 1200) - 600 - 300;  // from -800 to 400
+      // (70, y, 0) relative center 
+      let xCoord = Math.floor(Math.random() * 1200) - 600 + 70;  // from -530 to 670
+      let zCoord = Math.floor(Math.random() * 1200) - 600;  // from -600 to 600
 
       // Need to move minor objects a little 
       // from the Main tress
@@ -130,7 +131,7 @@ const loadReed = (scene) => {
     const treeClone = rootTree.clone("trunkClone" + i);
     // light.excludedMeshes.push(treeClone);
 
-    let xCoord = Math.floor(Math.random() * 1000) - 500;
+    let xCoord = Math.floor(Math.random() * 1000) - 500 + 70;
     let zCoord = Math.floor(Math.random() * 1000) - 500;
     // Need to move minor objects a little 
     // from the Main tress

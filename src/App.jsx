@@ -22,6 +22,9 @@ export const ButtonProvider = ({ children }) => {
     const [isIconPopupOpen, setIsIconPopupOpen] = useState(false);
     const [iconPopupId, setIconPopupId] = useState('');
 
+    // Initial rotation, on the first loading
+    const [isInitRotation, setIsInitRotation] = useState(true);
+
     // Autopilot mode
     const [isAutopilotOn, setIsAutopilotOn] = useState(false);
 
@@ -48,6 +51,9 @@ export const ButtonProvider = ({ children }) => {
 
         isAutopilotOn,
         setIsAutopilotOn,
+
+        isInitRotation,
+        setIsInitRotation,
     }
 
     return (

@@ -13,6 +13,7 @@ const StarterPage = () => {
     const [showSecondPage, setShowSecondPage] = useState(false);
     const { isLoaded, isOpen, handleComponentOpen } = useButtonContext();
 
+
     useEffect(() => {
         const delay = 4000; // milliseconds
 
@@ -37,7 +38,7 @@ const StarterPage = () => {
 
             const openComponentTimeout = setTimeout(() => {
                 handleComponentOpen(true);  // = setIsOpen(true) - Second page is closed
-            }, 10000);
+            }, 10000);  // 10000
 
             return () => {
                 clearTimeout(openSecondPageTimeout);
