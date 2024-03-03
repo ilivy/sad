@@ -37,10 +37,11 @@ const MusicSphereS = ({soundSIdx, onEnded}) => {
       sceneRef.current,
       null,
       {
-          loop: false,
-          autoplay: true,
-          maxDistance: 750,
-          useCustomAttenuation: true,
+        autoplay: true,
+        loop: false,
+        volume: 0.9,
+        maxDistance: 700,
+        spatialSound: true,
       }
     )
     musicS.onEndedObservable.add(onEnded);

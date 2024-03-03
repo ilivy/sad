@@ -7,10 +7,10 @@ import {
 } from '@babylonjs/core';
 
 // eslint-disable-next-line react/prop-types
-const MusicSphereN = ({soundNIdx, onEnded}) => {
+const MusicSphereN = ({ soundNIdx, onEnded }) => {
   const getScene = () => Engine.LastCreatedScene;
   const sceneRef = useRef(null);
-  
+
   useEffect(() => {
     sceneRef.current = getScene();
 
@@ -38,10 +38,11 @@ const MusicSphereN = ({soundNIdx, onEnded}) => {
       sceneRef.current,
       null,
       {
-          loop: false,
-          autoplay: true,
-          maxDistance: 750,
-          useCustomAttenuation: true,
+        autoplay: true,
+        loop: false,
+        volume: 0.9,
+        maxDistance: 700,
+        spatialSound: true,
       }
     )
     musicN.onEndedObservable.add(onEnded);

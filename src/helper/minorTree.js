@@ -1,4 +1,3 @@
-// import { SceneLoader, Vector3 } from '@babylonjs/core';
 import {
   Color3,
   MeshBuilder,

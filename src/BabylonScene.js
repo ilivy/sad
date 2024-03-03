@@ -265,6 +265,8 @@ export default function BabylonScene() {
     // Click "B SAD" button
     const handleClose = () => {
         setIsClose(true);
+        const sceneCanvas = document.getElementById("sad-canvas");
+        if (sceneCanvas) { sceneCanvas.focus(); }
     }
 
     return (
@@ -286,10 +288,10 @@ export default function BabylonScene() {
                 }}
                 antialias
                 onSceneReady={onSceneReady}
-                id="my-canvas"
+                id="sad-canvas"
             />
 
-            {isClose && isOpen && <SoundPlayer />}
+            {isOpen && <SoundPlayer />}
         </>
     )
 }
