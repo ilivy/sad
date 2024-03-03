@@ -48,6 +48,18 @@
 .par3 {
     animation: 6s fadeInAnimation 1s ease-in forwards;
 }
+.par4 {
+    animation: 7s fadeInAnimation 1s ease-in forwards;
+}
+.par5 {
+    animation: 8s fadeInAnimation 1s ease-in forwards;
+}
+.par6 {
+    animation: 9s fadeInAnimation 1s ease-in forwards;
+}
+.par7 {
+    animation: 10s fadeInAnimation 1s ease-in forwards;
+}
 
 .hp-logo-container {
     opacity: 0;
@@ -78,8 +90,7 @@
 }
 
 .sprava-logo-static {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 120px;
 }
 
 .sprava-logo-text {
@@ -96,8 +107,8 @@
     display: block;
     background-image: url('/public/jpg/btn/BSAD.png');
     background-size: cover;
-    width: 120px;
-    height: 60px;
+    width: 100px;
+    height: 50px;
     text-align: center;
     text-decoration: none;
     transition: 
