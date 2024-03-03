@@ -3,7 +3,6 @@ import '@babylonjs/loaders/OBJ';
 import PropTypes from 'prop-types';
 import {
     Color3,
-    CubeTexture,
     FreeCamera,
     HemisphericLight,
     Mesh,
@@ -75,11 +74,6 @@ export default function BabylonScene() {
         const skybox = Mesh.CreateBox('skyBox', 10000.0, scene);
         var skyboxMaterial = new StandardMaterial('skyBox', scene);
         skyboxMaterial.backFaceCulling = false;
-        skyboxMaterial.reflectionTexture = new CubeTexture(
-            'environment_3.env',
-            scene
-        );
-        skyboxMaterial.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE;
         skyboxMaterial.diffuseColor = new Color3(1, 1, 1);
         skyboxMaterial.specularColor = new Color3(5, 5, 5);
         skyboxMaterial.disableLighting = false;
@@ -247,7 +241,6 @@ export default function BabylonScene() {
         // Loading 3 main Trees
         //
         loadMainTrees(
-            './main_trees/M_Tree_1.obj', 
             scene,
             onProgressLoading,
             () => {

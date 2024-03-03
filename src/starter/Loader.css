@@ -4,6 +4,9 @@
   flex-direction: column;
   margin: 2rem 0 0.2rem 0;
   animation: loaderCntAnimation 2s ease-in forwards;
+}
+
+.loader-container .loader{
   font-weight: 600;
 }
 

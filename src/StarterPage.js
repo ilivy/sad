@@ -33,7 +33,6 @@ const StarterPage = () => {
             
             const openSecondPageTimeout = setTimeout(() => {
                 setShowSecondPage(true);
-                console.log("Show Second page")
             }, 2000);
 
             const openComponentTimeout = setTimeout(() => {

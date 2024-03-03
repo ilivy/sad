@@ -7,7 +7,11 @@ import {
 } from '@babylonjs/core';
 import constructTreeMaterial from "./mainTreeMaterial";
 
-const loadMainTrees = (objUrl, scene, onProgressLoading, onLoad) => {
+const loadMainTrees = (scene, onProgressLoading, onLoad) => {
+  
+  // const objUrl = './main_trees/M_Tree_1.obj';
+  // const objUrl = './main_trees/m_tree_low.obj';
+  const objUrl = './main_trees/m_tree_opt.obj';
 
   const workerPool = new WorkerPool([4]);
 
@@ -27,18 +31,19 @@ const loadMainTrees = (objUrl, scene, onProgressLoading, onLoad) => {
   // ).then(() => {
 
       const treeSmodel = meshes[0];
-      treeSmodel.scaling = new Vector3(0.04, 0.04, 0.04);
-      treeSmodel.position = new Vector3(0, 0, 0);
+      treeSmodel.scaling = new Vector3(400, 400, 400);
+      treeSmodel.rotation.x = - Math.PI / 2;
+      treeSmodel.position = new Vector3(307, 0, -347);
       constructTreeMaterial(treeSmodel);
 
       const treeNmodel = treeSmodel.clone("treeNclone");
       treeNmodel.skeleton = null;
-      treeNmodel.position = new Vector3(-680, 0, 320);
+      treeNmodel.position = new Vector3(248, 0, 360);
       constructTreeMaterial(treeNmodel);
 
       const treeZmodel = treeSmodel.clone("treeZclone");
       treeZmodel.skeleton = null;
-      treeZmodel.position = new Vector3(-80, 0, 700);
+      treeZmodel.position = new Vector3(-391, 0, -27);
       constructTreeMaterial(treeZmodel);
 
 

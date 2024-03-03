@@ -33,7 +33,8 @@ const loadMinorTrees = (scene, light) => {
 
   loadReed(scene);
 
-  const objUrl = "./minor_trees/tree.obj";
+  // const objUrl = "./minor_trees/tree.obj";
+  const objUrl = "./minor_trees/tree_opt.obj";
 
   SceneLoader.ImportMeshAsync(
     '',
@@ -56,17 +57,17 @@ const loadMinorTrees = (scene, light) => {
 
       // Need to move minor objects a little 
       // from the Main tress
-      if (128 < xCoord < 368 && 240 < zCoord < 480) {
-        xCoord += 400;
-        zCoord += 400;
+      if (num_between(148, xCoord, 348) && num_between(260, zCoord, 460)) {
+        xCoord += 300;
+        zCoord += 300;
       }
-      if (187 < xCoord < 427 && -467 < zCoord < -227) {
-        xCoord += 400;
-        zCoord -= 400;
+      if (num_between(207, xCoord, 407) && num_between(-447, zCoord, -247)) {
+        xCoord += 300;
+        zCoord -= 300;
       }
-      if (-511 < xCoord < -311 && -147 < zCoord < 93) {
-        xCoord -= 400;
-        zCoord += 400;
+      if (num_between(-491, xCoord, -291) && num_between(-127, zCoord, 73)) {
+        xCoord -= 300;
+        zCoord += 300;
       }
 
       mtreeInstance.position = new Vector3(xCoord, 44, zCoord);
@@ -86,7 +87,7 @@ const loadMinorTrees = (scene, light) => {
       rnum = Math.random();
       if (rnum > 0.9) {
         mtreeInstance.scaling = new Vector3(0.8, 1, 0.8);
-        mtreeInstance.position.y = 24;
+        mtreeInstance.position.y = 30;
       } else if (rnum > 0.7) {
         mtreeInstance.scaling = new Vector3(1, 1, 1);
         mtreeInstance.position.y = 32;
@@ -133,9 +134,9 @@ const loadReed = (scene) => {
     let zCoord = Math.floor(Math.random() * 1000) - 500;
     // Need to move minor objects a little 
     // from the Main tress
-    if ((228 < xCoord < 268 && 340 < zCoord < 380)
-      || (287 < xCoord < 327 && -367 < zCoord < -327)
-      || (-411 < xCoord < -371 && -47 < zCoord < -7)) {
+    if ((num_between(228, xCoord, 268) && num_between(340, zCoord, 380))
+      || (num_between(287, xCoord, 327) && num_between(-367, zCoord, -327))
+      || (num_between(-411, xCoord, -371) && num_between(-47, zCoord, -7))) {
       xCoord += 100;
       zCoord += 100;
     }
@@ -161,6 +162,10 @@ const loadReed = (scene) => {
       treeClone.scaling = new Vector3(1, 0.8, 1);
     }
   }
+}
+
+const num_between = (num_min, num, num_max) => {
+  return num_min < num && num < num_max;
 }
 
 export default loadMinorTrees;
