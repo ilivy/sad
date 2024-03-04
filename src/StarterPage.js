@@ -38,7 +38,7 @@ const StarterPage = () => {
 
             const openComponentTimeout = setTimeout(() => {
                 handleComponentOpen(true);  // = setIsOpen(true) - Second page is closed
-            }, 10000);  // 10000
+            }, 20000);  // 10000
 
             return () => {
                 clearTimeout(openSecondPageTimeout);
