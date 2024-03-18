@@ -75,13 +75,12 @@ export const useButtonContext = () => {
 
 export const App = () => {
     // need to use a small delay before starting loading a huge scene
-    const [toStartLoadingScene, setToStartLoadingScene] = useState(false)
+    const [toStartLoadingScene, setToStartLoadingScene] = useState(false);
 
     useEffect(() => {
         const toStartLoadingSceneTimeout = setTimeout(() => {
             setToStartLoadingScene(true);
-            // setToStartLoadingScene(false);
-        }, 1000)
+        }, 500)
 
         // Cleanup function to clear timeouts on unmount
         return () => {

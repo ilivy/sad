@@ -52,8 +52,9 @@
   padding-bottom: 6rem;
 }
 
-.music-lib-link-n {
-  cursor: pointer;
+.music-lib-link-n,
+.music-lib-link-n:visited {
   text-decoration: underline;
   font-weight: normal;
+  color: inherit;
 }

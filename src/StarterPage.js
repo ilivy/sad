@@ -31,10 +31,10 @@ const StarterPage = () => {
 
     useEffect(() => {
         if (isLoaded) {
-            
+
             const openSecondPageTimeout = setTimeout(() => {
                 setShowSecondPage(true);
-            }, 2000);
+            }, 8000);
 
             const openComponentTimeout = setTimeout(() => {
                 handleComponentOpen(true);  // = setIsOpen(true) - Second page is closed
@@ -59,7 +59,6 @@ const StarterPage = () => {
     }
 
     function renderSecondPage() {
-        // return <></>
         return showSecondPage && <SecondPage />
     }
 

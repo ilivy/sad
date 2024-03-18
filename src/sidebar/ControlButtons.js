@@ -93,8 +93,8 @@ const ControlButtons = () => {
           curZ = sceneRef.current.activeCamera.target.z;
         }
 
-        const deltaX = (nextX - curX) / 100;
-        const deltaZ = (nextZ - curZ) / 100;
+        const deltaX = (nextX - curX) / 1000;
+        const deltaZ = (nextZ - curZ) / 1000;
 
         // console.log("deltaX :" + deltaX);
         // console.log("deltaZ :" + deltaZ);
@@ -125,14 +125,14 @@ const ControlButtons = () => {
       const autopilotSetNextMovement = () => {
         // Main "Autopilot" mode handler
         //
-        // runs every 5 seconds
+        // runs every 10 seconds
         // checks if we are far away from the center
-        // (or in some random cases (Math.random() > 0.8))
+        // (or in some random cases (Math.random() > 0.6))
         // if yes: sets interval to turn closer to the center slowly
         // if no: sets interval to go forward slowly
 
         if (sceneRef.current.activeCamera.position.length() > 300
-            || Math.random() > 0.8) {
+            || Math.random() > 0.6) {
 
           clearInterval(intervalAutopilotStepRef.current);
           clearInterval(intervalAutopilotTurnRef.current);
@@ -159,7 +159,7 @@ const ControlButtons = () => {
   
       intervalAutopilotRef.current = setInterval(() => {
         autopilotSetNextMovement();
-      }, 5000);
+      }, 10000);
     }
 
 

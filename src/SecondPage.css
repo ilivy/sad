@@ -11,6 +11,25 @@
     animation: fadeInAnimation 2s ease-in forwards;
 }
 
+.second-page p {
+    display: flex;
+}
+
+.second-page img {
+    width: 4rem;
+    height: 2rem;
+    align-self: flex-end;
+}
+
+@media (max-width: 800px) {
+    .second-page p {
+        flex-direction: column;
+    }
+    .second-page img {
+        align-self: center;
+    }
+}
+
 @keyframes fadeInAnimation {
     0% { opacity: 0; }
     100% { opacity: 1; }

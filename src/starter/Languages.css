@@ -1,0 +1,18 @@
+.lang-container {
+    text-align: center;
+    margin-top: 70px    ;
+}
+
+.eng-logo-icon,
+.by-logo-icon,
+.rus-logo-icon {
+    width:100px;
+}
+
+@media (max-width: 1024px) {
+    .eng-logo-icon,
+    .by-logo-icon,
+    .rus-logo-icon {
+        width:60px;
+    }
+}

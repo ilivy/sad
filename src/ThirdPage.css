@@ -125,6 +125,12 @@
     left: 0.5px;
 }
 
+@media (max-width: 1024px) {
+    .sprava-logo-container {
+        margin-bottom: 6rem;
+    }
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -134,28 +140,3 @@
     }
 }
 
-/* .container-third-page {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow-y: auto;
-    height: 100vh;
-}
-
-.content {
-
-} */
-
-/* .container-third-page {
-    position: absolute;
-    margin: auto;
-
-    background: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: auto;
-    height: 100vh;
-
-} */
