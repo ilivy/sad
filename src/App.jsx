@@ -8,6 +8,9 @@ const ButtonContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const ButtonProvider = ({ children }) => {
+    // language for translations
+    const [textLang, setTextLang] = useState('ru');
+
     // Scene Component is shown
     const [isOpen, setIsOpen] = useState(false);
     // 3D objects are loaded
@@ -34,6 +37,9 @@ export const ButtonProvider = ({ children }) => {
     }
 
     const contextValue = {
+        textLang,
+        setTextLang,
+
         isLoaded,
         isOpen,
         setIsLoaded,
