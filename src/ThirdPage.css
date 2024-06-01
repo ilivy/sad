@@ -93,12 +93,19 @@
     max-width: 120px;
 }
 
-.sprava-logo-text {
-    margin-top: 4rem;
+.sprava-logo-text,
+.sprava-logo-text-en {
     text-align: center;
     font-size: 1rem;
+}
+.sprava-logo-text {
+    margin-top: 4rem;
     opacity: 0;
     animation: 9s fadeInAnimation 1s ease-in forwards;
+}
+.sprava-logo-text-en {
+    display: block;
+    margin-top: 0rem;
 }
 
 .button {

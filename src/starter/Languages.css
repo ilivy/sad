@@ -7,6 +7,7 @@
 .by-logo-icon,
 .rus-logo-icon {
     width:100px;
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {

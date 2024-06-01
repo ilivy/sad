@@ -40,7 +40,7 @@ const MainMenu = () => {
         <h4 onClick={() => handleClickItem("autopilot")}>
           {textLang == "en" && <>Autoconductor</>}
           {textLang == "by" && <>Аўтадырыжор</>}
-          {textLang == "ru" && <>Автодирижер</>}
+          {textLang == "ru" && <>Ты слушаешь</>}
         </h4>
         {itemToShow === "autopilot" && <p className="text">
           {textLang == "en" && <>
@@ -70,7 +70,7 @@ const MainMenu = () => {
         <h4 onClick={() => handleClickItem("pilot")}>
           {textLang == "en" && <>Music score</>}
           {textLang == "by" && <>Партытура</>}
-          {textLang == "ru" && <>Партитура</>}
+          {textLang == "ru" && <>Ты играешь</>}
         </h4>
         {itemToShow === "pilot" && <p className="text">
           {textLang == "en" && <>

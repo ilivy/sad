@@ -1,15 +1,35 @@
+import { useButtonContext } from "../../App";
+
 import "./PersonN.css";
 
 const PersonN = () => {
+  const { textLang } = useButtonContext();
+
   return (
     <div className="person-container-n">
       <div className="person-container-n-inner">
         <ul className="person-container-n-ul">
-          <li>композитор</li>
-          <li>гитарист</li>
-          <li>импровизатор</li>
+          { textLang == "en" && <>
+              <li>composer</li>
+              <li>guitarist</li>
+              <li>improviser</li>
+            </>}
+            { textLang == "by" && <>
+              <li>кампазітар</li>
+              <li>гітарыст</li>
+              <li>імправізатар</li>
+            </>}
+            { textLang == "ru" && <>
+              <li>композитор</li>
+              <li>гитарист</li>
+              <li>импровизатор</li>
+            </>}
         </ul>
-        <h4>Леонид Нарушевич</h4>
+        <h4>
+            { textLang == "en" && <>Leonid Narushevich</>}
+            { textLang == "by" && <>Леанід Нарушэвіч</>}
+            { textLang == "ru" && <>Леонид Нарушевич</>}
+        </h4>
         <div>
           <span className="text-bold">(1964 — 2019)</span>
         </div>
@@ -29,7 +49,9 @@ const PersonN = () => {
               rel="noreferrer"
               className="music-lib-link-n"
             >
-            музыка
+            { textLang == "en" && <>music</>}
+            { textLang == "by" && <>музыка</>}
+            { textLang == "ru" && <>музыка</>}
           </a>
         </div>
       </div>
