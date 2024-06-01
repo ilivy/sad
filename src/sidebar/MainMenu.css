@@ -77,28 +77,12 @@
 }
 
 .btn-pilot {
-  position: relative;
   margin-top: 1rem;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  min-width: 5rem;
-}
-
-.btn-pilot img {
-  position: relative;
-  z-index: 1;
-}
-
-#autopilot-on,
-#autopilot-off {
-  /* if <img> is not loaded yet */
-  position: absolute;
+  text-align: center;
   background-color: #93d5f8;
-  padding: 0.2rem;
-  left: 0;
-  top: 0;
-  z-index: 0;
+  padding: 0.4rem 0.6rem;
   font-size: 1.2rem;
+}
+.btn-pilot:hover {
+  cursor: pointer;
 }

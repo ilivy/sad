@@ -108,16 +108,15 @@
     margin-top: 0rem;
 }
 
-.button {
+.button-v-sad {
     position: relative;
     margin: auto;
     display: block;
-    background-image: url('/public/jpg/btn/BSAD.png');
-    background-size: cover;
-    width: 100px;
     height: 50px;
     text-align: center;
-    text-decoration: none;
+    background-color: #93d5f8;
+    padding: 0.2rem 0.6rem;
+    font-size: 1.2rem;
     transition: 
         top 0.2s,
         left 0.2s;
@@ -125,11 +124,8 @@
     animation: 8s fadeInAnimation 1s ease-in forwards;
 }
 
-.button:hover {
+.button-v-sad:hover {
     cursor: pointer;
-    opacity: 0.8;
-    top: 0.5px;
-    left: 0.5px;
 }
 
 @media (max-width: 1024px) {

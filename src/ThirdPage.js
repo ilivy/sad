@@ -74,7 +74,11 @@ function ThirdPage({ onClose }) {
                         { textLang == "by" && <>карыстайцеся навушнікамі дзеля лепшага ўражання</>}
                         { textLang == "ru" && <>используйте наушники для лучшего впечатления</>}
                     </div>
-                    <button className="button" onClick={handleClick}></button>
+                    <button className="button-v-sad" onClick={handleClick}>
+                        { textLang == "en" && <>TO SAD</>}
+                        { textLang == "by" && <>У SAD</>}
+                        { textLang == "ru" && <>В SAD</>}
+                    </button>
                     <div className="sprava-logo-text">
                         { textLang == "by" && <>праект фестывалю</>}
                         { textLang == "ru" && <>проект фестиваля</>}

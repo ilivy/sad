@@ -60,11 +60,9 @@ const MainMenu = () => {
           </>}
           <br/>
           <button className="btn-pilot" onClick={() => handleClickBtnAutopilot(true)}>
-            <img
-              src="/jpg/btn/autopilot.png"
-              alt="Autopilot"
-            />
-            <span id="autopilot-on">Autopilot</span>
+            { textLang == "en" && <>AUTOPILOT</>}
+            { textLang == "by" && <>АЎТАПІЛОТ</>}
+            { textLang == "ru" && <>АВТОПИЛОТ</>}
           </button>
         </p>}
         <h4 onClick={() => handleClickItem("pilot")}>
@@ -90,11 +88,9 @@ const MainMenu = () => {
           </>}
           <br/>
           <button className="btn-pilot" onClick={() => handleClickBtnAutopilot(false)}>
-            <img
-              src="/jpg/btn/pilot.png"
-              alt="Pilot"
-            />
-            <span id="autopilot-off">Pilot</span>
+            { textLang == "en" && <>PILOT</>}
+            { textLang == "by" && <>ПІЛОТ</>}
+            { textLang == "ru" && <>ПИЛОТ</>}
           </button>
         </p>}
       </div>
