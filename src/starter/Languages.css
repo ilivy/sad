@@ -1,12 +1,12 @@
 .lang-container {
     text-align: center;
-    margin-top: 70px    ;
+    margin-top: 30px;
 }
 
 .eng-logo-icon,
 .by-logo-icon,
 .rus-logo-icon {
-    width:100px;
+    width: 76px;
     cursor: pointer;
 }
 

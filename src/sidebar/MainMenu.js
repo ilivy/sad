@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import { useState } from "react";
 import { useButtonContext } from "../App";
+import { Languages } from '../starter/Languages';
 
 import "./MainMenu.css";
 
@@ -93,6 +94,7 @@ const MainMenu = () => {
             { textLang == "ru" && <>ПИЛОТ</>}
           </button>
         </p>}
+        <Languages/>
       </div>
       <div className="bottom-box">
         {itemToShow !== "about" && 

@@ -3,6 +3,10 @@
   flex-direction: row;
 }
 
+.artobj-container a {
+  color: black;
+}
+
 .artobj-photo {
   width: 50%;
   padding: 0 0 0 2rem;

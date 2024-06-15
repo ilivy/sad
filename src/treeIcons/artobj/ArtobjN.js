@@ -18,7 +18,16 @@ const ArtobjN = () => {
           <h2>Art object</h2>
           <p>
             Author:
-            <br/><span className="text-bold">Bazinato</span>
+            <br/>
+            <span className="text-bold">
+              <a
+                href="https://www.instagram.com/bazinato/"
+                target="_blank"
+                rel="noreferrer"
+                >
+                Bazinato
+              </a>
+            </span>
             <br/>is an audiovisual artist, explorer and magician.
             <br/>Social activist.
             <br/>Working with practices of interaction and practices of perception.
@@ -29,7 +38,16 @@ const ArtobjN = () => {
           <h2>Арт-аб&apos;ект</h2>
           <p>
             Аўтар:
-            <br/><span className="text-bold">Bazinato</span>
+            <br/>
+            <span className="text-bold">
+              <a
+                href="https://www.instagram.com/bazinato/"
+                target="_blank"
+                rel="noreferrer"
+                >
+                Bazinato
+              </a>
+            </span>
             <br/>аўдыёвізуальны мастак, даследчык і чараўнік.
             <br/>Грамадскі актывіст.
             <br/>Працуе з практыкамі ўзаемадзеяння і практыкамі ўспрымання.
@@ -40,7 +58,16 @@ const ArtobjN = () => {
           <h2>Арт-объект</h2>
           <p>
             Автор:
-            <br/><span className="text-bold">Bazinato</span>
+            <br/>
+            <span className="text-bold">
+              <a
+                href="https://www.instagram.com/bazinato/"
+                target="_blank"
+                rel="noreferrer"
+                >
+                Bazinato
+              </a>
+            </span>
             <br/>Аудиовизуальный художник, исследователь и волшебник.
             <br/>Общественный активист.
             <br/>Работает с практиками взаимодействия и практиками восприятия.

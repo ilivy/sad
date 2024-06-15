@@ -80,6 +80,8 @@
   margin-top: 1rem;
   text-align: center;
   background-color: #93d5f8;
+  color: black;
+  border: 1px solid black;
   padding: 0.4rem 0.6rem;
   font-size: 1.2rem;
 }
